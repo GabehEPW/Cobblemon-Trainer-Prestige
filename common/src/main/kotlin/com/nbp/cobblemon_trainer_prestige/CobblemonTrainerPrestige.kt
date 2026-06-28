@@ -16,12 +16,12 @@ object CobblemonTrainerPrestige {
 
     fun init() {
         TitleRegistry.bootstrap()
-        logger.info("$MOD_NAME carregado com ${TitleRegistry.all().size} titulos registrados.")
+        logger.info("$MOD_NAME loaded with ${TitleRegistry.all().size} registered titles.")
 
         try {
             CobblemonProgressHooks.register()
         } catch (error: NoClassDefFoundError) {
-            logger.warn("Cobblemon nao encontrado. Titulos de Cobblemon ficarao inativos.")
+            logger.warn("Cobblemon not found. Cobblemon titles will stay inactive.")
         }
     }
 

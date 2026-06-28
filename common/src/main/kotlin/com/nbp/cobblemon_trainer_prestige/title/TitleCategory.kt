@@ -1,22 +1,22 @@
 package com.nbp.cobblemon_trainer_prestige.title
 
 enum class TitleCategory(val ptBrName: String) {
-    GENERAL("Geral"),
-    CAPTURE("Captura"),
-    TYPE_MASTER("Tipo Pokemon"),
+    GENERAL("General"),
+    CAPTURE("Capture"),
+    TYPE_MASTER("Pokemon Types"),
     SHINY("Shiny"),
-    BATTLE("Batalha"),
-    EXPLORATION("Exploracao"),
-    LEGENDARY("Lendarios"),
-    LEGENDARY_MASTER("Mestres Lendarios"),
-    MYTHICAL("Miticos"),
-    MYTHICAL_MASTER("Mestres Miticos"),
-    ULTRA_BEAST("Ultra Bestas"),
-    ULTRA_BEAST_MASTER("Mestres Ultra Bestas"),
-    BREEDING("Criacao"),
+    BATTLE("Battle"),
+    EXPLORATION("Exploration"),
+    LEGENDARY("Legendaries"),
+    LEGENDARY_MASTER("Legendary Masters"),
+    MYTHICAL("Mythicals"),
+    MYTHICAL_MASTER("Mythical Masters"),
+    ULTRA_BEAST("Ultra Beasts"),
+    ULTRA_BEAST_MASTER("Ultra Beast Masters"),
+    BREEDING("Breeding"),
     SOCIAL("Social"),
-    EVENT("Evento"),
-    SECRET("Secreto"),
+    EVENT("Event"),
+    SECRET("Secret"),
     ;
 
     fun isPossessionMaster(): Boolean {

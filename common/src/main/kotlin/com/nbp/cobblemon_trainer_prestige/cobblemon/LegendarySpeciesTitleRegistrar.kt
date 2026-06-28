@@ -31,7 +31,7 @@ object LegendarySpeciesTitleRegistrar {
                     Title(
                         id = titleId,
                         displayName = "${group.titlePrefix} ${species.name}",
-                        description = "Voce possui ${species.name} no time ou no PC.",
+                        description = "You own ${species.name} in your party or PC.",
                         rarity = group.rarity,
                         category = group.category,
                         visibility = TitleVisibility.VISIBLE,
@@ -43,7 +43,7 @@ object LegendarySpeciesTitleRegistrar {
             }
 
         if (added > 0) {
-            CobblemonTrainerPrestige.logger.info("Registrados $added titulos individuais especiais.")
+            CobblemonTrainerPrestige.logger.info("Registered $added individual special titles.")
         }
     }
 

@@ -44,7 +44,7 @@ object TitleStorage {
         val loaded = if (path.exists()) {
             runCatching { path.reader().use { gson.fromJson(it, TrainerPrestigeConfig::class.java) } }
                 .getOrElse {
-                    CobblemonTrainerPrestige.logger.warn("Falha ao ler config Trainer Prestige; usando padrao.", it)
+                    CobblemonTrainerPrestige.logger.warn("Failed to read Trainer Prestige config; using defaults.", it)
                     TrainerPrestigeConfig()
                 }
         } else {
@@ -95,7 +95,7 @@ object TitleStorage {
         return runCatching {
             path.reader().use { gson.fromJson(it, PlayerTitleData::class.java) }
         }.getOrElse {
-            CobblemonTrainerPrestige.logger.warn("Falha ao ler dados de titulo de $uuid; usando dados vazios.", it)
+            CobblemonTrainerPrestige.logger.warn("Failed to read title data for $uuid; using empty data.", it)
             PlayerTitleData(uuid)
         }
     }
@@ -108,7 +108,7 @@ object TitleStorage {
         val loaded = if (path.exists()) {
             runCatching { path.reader().use { gson.fromJson(it, WorldTitleData::class.java) } }
                 .getOrElse {
-                    CobblemonTrainerPrestige.logger.warn("Falha ao ler dados globais Trainer Prestige; usando dados vazios.", it)
+                    CobblemonTrainerPrestige.logger.warn("Failed to read global Trainer Prestige data; using empty data.", it)
                     WorldTitleData()
                 }
         } else {

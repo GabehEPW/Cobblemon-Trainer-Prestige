@@ -151,11 +151,11 @@ object TitleProgressManager {
         val data = TitleStorage.data(player.server, player.uuid)
         val title = resolveUnlockedTitle(data, titleId)
         if (title == null) {
-            CobblemonTrainerPrestige.send(player, Component.literal("Titulo nao encontrado ou ainda bloqueado. Use o ID sugerido pelo autocomplete."))
+            CobblemonTrainerPrestige.send(player, Component.literal("Title not found or still locked. Use the id suggested by autocomplete."))
             return false
         }
         if (title.id !in data.unlockedTitles) {
-            CobblemonTrainerPrestige.send(player, Component.literal("Voce ainda nao desbloqueou esse titulo."))
+            CobblemonTrainerPrestige.send(player, Component.literal("You have not unlocked this title yet."))
             return false
         }
         data.equippedTitleId = title.id
@@ -164,7 +164,7 @@ object TitleProgressManager {
         player.sendSystemMessage(
             Component.empty()
                 .append(CobblemonTrainerPrestige.prefix())
-                .append("Voce equipou o titulo: ")
+                .append("You equipped the title: ")
                 .append(TitleDisplayFormatter.decorated(title))
         )
         return true
@@ -176,7 +176,7 @@ object TitleProgressManager {
         data.lockedTitleId = null
         TitleStorage.save(player.server, data)
         TitleTabDisplayManager.clear(player)
-        CobblemonTrainerPrestige.send(player, Component.literal("Seu titulo foi removido."))
+        CobblemonTrainerPrestige.send(player, Component.literal("Your title was removed."))
     }
 
     fun equippedTitle(player: ServerPlayer) =
@@ -195,7 +195,7 @@ object TitleProgressManager {
         }
 
         if (title == null || title.id !in data.unlockedTitles) {
-            CobblemonTrainerPrestige.send(player, Component.literal("Escolha um titulo desbloqueado para travar."))
+            CobblemonTrainerPrestige.send(player, Component.literal("Choose an unlocked title to lock."))
             return false
         }
 
@@ -206,7 +206,7 @@ object TitleProgressManager {
         player.sendSystemMessage(
             Component.empty()
                 .append(CobblemonTrainerPrestige.prefix())
-                .append("Titulo travado: ")
+                .append("Title locked: ")
                 .append(TitleDisplayFormatter.decorated(title))
         )
         return true
@@ -221,12 +221,12 @@ object TitleProgressManager {
         TitleTabDisplayManager.refresh(player)
 
         val message = if (oldLocked == null) {
-            Component.literal("Nenhum titulo estava travado. Auto-equip ativado.")
+            Component.literal("No title was locked. Auto-equip enabled.")
         } else {
             Component.empty()
-                .append("Titulo destravado: ")
+                .append("Title unlocked: ")
                 .append(TitleDisplayFormatter.decorated(oldLocked))
-                .append(". Auto-equip ativado.")
+                .append(". Auto-equip enabled.")
         }
         player.sendSystemMessage(CobblemonTrainerPrestige.prefix().append(message))
     }
@@ -253,7 +253,7 @@ object TitleProgressManager {
             player.sendSystemMessage(
                 Component.empty()
                     .append(CobblemonTrainerPrestige.prefix())
-                    .append("Melhor titulo equipado automaticamente: ")
+                    .append("Best title auto-equipped: ")
                     .append(TitleDisplayFormatter.decorated(best))
             )
         }
@@ -283,7 +283,7 @@ object TitleProgressManager {
         admin?.sendSystemMessage(
             Component.empty()
                 .append(CobblemonTrainerPrestige.prefix())
-                .append("O titulo ${title.displayName} foi concedido para ${target.gameProfile.name}.")
+                .append("The title ${title.displayName} was granted to ${target.gameProfile.name}.")
         )
         return granted
     }

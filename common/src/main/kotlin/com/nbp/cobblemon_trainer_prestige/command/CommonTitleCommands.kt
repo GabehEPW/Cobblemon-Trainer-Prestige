@@ -7,6 +7,7 @@ import com.mojang.brigadier.suggestion.Suggestions
 import com.mojang.brigadier.suggestion.SuggestionsBuilder
 import com.nbp.cobblemon_trainer_prestige.CobblemonTrainerPrestige
 import com.nbp.cobblemon_trainer_prestige.display.TitleDisplayFormatter
+import com.nbp.cobblemon_trainer_prestige.gui.PrestigeTitleGui
 import com.nbp.cobblemon_trainer_prestige.progress.TitleProgressManager
 import com.nbp.cobblemon_trainer_prestige.storage.TitleStorage
 import com.nbp.cobblemon_trainer_prestige.title.Title
@@ -26,7 +27,7 @@ object CommonTitleCommands {
     fun register(dispatcher: CommandDispatcher<CommandSourceStack>) {
         dispatcher.register(
             literal("prestige")
-                .executes { ctx -> listTitles(ctx.source.playerOrException); 1 }
+                .executes { ctx -> PrestigeTitleGui.open(ctx.source.playerOrException); 1 }
                 .then(literal("help").executes { ctx -> help(ctx.source.playerOrException); 1 })
                 .then(literal("list").executes { ctx -> listTitles(ctx.source.playerOrException); 1 })
                 .then(literal("equip").then(argument("id", StringArgumentType.word())
@@ -56,20 +57,20 @@ object CommonTitleCommands {
                         1
                     }))
                 .then(literal("progress").executes { ctx -> progress(ctx.source.playerOrException); 1 })
-                .then(literal("search").then(argument("nome", StringArgumentType.greedyString()).executes { ctx ->
-                    search(ctx.source.playerOrException, StringArgumentType.getString(ctx, "nome"))
+                .then(literal("search").then(argument("name", StringArgumentType.greedyString()).executes { ctx ->
+                    search(ctx.source.playerOrException, StringArgumentType.getString(ctx, "name"))
                     1
                 }))
-                .then(literal("category").then(argument("categoria", StringArgumentType.word())
+                .then(literal("category").then(argument("category", StringArgumentType.word())
                     .suggests { _, builder -> suggestCategoriesAndRarities(builder) }
                     .executes { ctx ->
-                        category(ctx.source.playerOrException, StringArgumentType.getString(ctx, "categoria"))
+                        category(ctx.source.playerOrException, StringArgumentType.getString(ctx, "category"))
                         1
                     }))
-                .then(literal("rarity").then(argument("raridade", StringArgumentType.word())
+                .then(literal("rarity").then(argument("rarity", StringArgumentType.word())
                     .suggests { _, builder -> suggestRarities(builder) }
                     .executes { ctx ->
-                        rarity(ctx.source.playerOrException, StringArgumentType.getString(ctx, "raridade"))
+                        rarity(ctx.source.playerOrException, StringArgumentType.getString(ctx, "rarity"))
                         1
                     }))
                 .then(literal("grant").requires { it.hasPermission(2) }
@@ -90,7 +91,7 @@ object CommonTitleCommands {
                                 val target = EntityArgument.getPlayer(ctx, "player")
                                 val id = StringArgumentType.getString(ctx, "id")
                                 val removed = TitleProgressManager.revoke(target, id)
-                                ctx.source.sendSuccess({ CobblemonTrainerPrestige.prefix().append(if (removed) "Titulo removido." else "Titulo nao estava desbloqueado.") }, false)
+                                ctx.source.sendSuccess({ CobblemonTrainerPrestige.prefix().append(if (removed) "Title removed." else "Title was not unlocked.") }, false)
                                 1
                             })))
                 .then(literal("set").requires { it.hasPermission(2) }
@@ -108,13 +109,13 @@ object CommonTitleCommands {
                     .then(argument("player", EntityArgument.player()).executes { ctx ->
                         val target = EntityArgument.getPlayer(ctx, "player")
                         TitleStorage.reset(target.server, target.uuid)
-                        ctx.source.sendSuccess({ CobblemonTrainerPrestige.prefix().append("Dados resetados para ${target.gameProfile.name}.") }, false)
+                        ctx.source.sendSuccess({ CobblemonTrainerPrestige.prefix().append("Data reset for ${target.gameProfile.name}.") }, false)
                         1
                     }))
                 .then(literal("reload").requires { it.hasPermission(2) }.executes { ctx ->
                     TitleStorage.reloadConfig()
                     TitleRegistry.bootstrap()
-                    ctx.source.sendSuccess({ CobblemonTrainerPrestige.prefix().append("Config e titulos recarregados.") }, false)
+                    ctx.source.sendSuccess({ CobblemonTrainerPrestige.prefix().append("Config and titles reloaded.") }, false)
                     1
                 })
                 .then(literal("addprogress").requires { it.hasPermission(2) }
@@ -127,7 +128,7 @@ object CommonTitleCommands {
                                     StringArgumentType.getString(ctx, "progress_key"),
                                     IntegerArgumentType.getInteger(ctx, "amount")
                                 )
-                                ctx.source.sendSuccess({ CobblemonTrainerPrestige.prefix().append("Progresso atualizado.") }, false)
+                                ctx.source.sendSuccess({ CobblemonTrainerPrestige.prefix().append("Progress updated.") }, false)
                                 1
                             }))))
                 .then(literal("debug").requires { it.hasPermission(2) }
@@ -141,23 +142,23 @@ object CommonTitleCommands {
     fun sendJoinHint(player: ServerPlayer) {
         player.sendSystemMessage(
             CobblemonTrainerPrestige.prefix()
-                .append("Use /prestige help para ver, equipar, bloquear e filtrar seus titulos.")
+                .append("Use /prestige to open the title menu. Use /prestige help to see commands.")
         )
     }
 
     private fun help(player: ServerPlayer) {
-        player.sendSystemMessage(CobblemonTrainerPrestige.prefix().append("Comandos de titulos:"))
-        player.sendSystemMessage(Component.literal("/prestige - Lista seus titulos por raridade."))
-        player.sendSystemMessage(Component.literal("/prestige list - Lista seus titulos por raridade."))
-        player.sendSystemMessage(Component.literal("/prestige current - Mostra o titulo equipado."))
-        player.sendSystemMessage(Component.literal("/prestige equip <id> - Equipa um titulo desbloqueado."))
-        player.sendSystemMessage(Component.literal("/prestige lock [id] - Trava o titulo atual ou escolhido."))
-        player.sendSystemMessage(Component.literal("/prestige unlock - Reativa a troca automatica pelo melhor titulo."))
-        player.sendSystemMessage(Component.literal("/prestige info <id> - Mostra detalhes e progresso de um titulo."))
-        player.sendSystemMessage(Component.literal("/prestige progress - Mostra titulos bloqueados em progresso."))
-        player.sendSystemMessage(Component.literal("/prestige search <nome> - Procura titulos por nome ou id."))
-        player.sendSystemMessage(Component.literal("/prestige rarity <raridade> - Filtra por COMMON, RARE, LEGENDARY..."))
-        player.sendSystemMessage(Component.literal("/prestige category <categoria> - Filtra por CAPTURE, SHINY, BATTLE..."))
+        player.sendSystemMessage(CobblemonTrainerPrestige.prefix().append("Title commands:"))
+        player.sendSystemMessage(Component.literal("/prestige - Opens the interactive title menu."))
+        player.sendSystemMessage(Component.literal("/prestige list - Lists your titles by rarity."))
+        player.sendSystemMessage(Component.literal("/prestige current - Shows your equipped title."))
+        player.sendSystemMessage(Component.literal("/prestige equip <id> - Equips an unlocked title."))
+        player.sendSystemMessage(Component.literal("/prestige lock [id] - Locks the current or chosen title."))
+        player.sendSystemMessage(Component.literal("/prestige unlock - Enables automatic best-title swapping again."))
+        player.sendSystemMessage(Component.literal("/prestige info <id> - Shows details and progress for a title."))
+        player.sendSystemMessage(Component.literal("/prestige progress - Shows locked titles in progress."))
+        player.sendSystemMessage(Component.literal("/prestige search <name> - Searches titles by name or id."))
+        player.sendSystemMessage(Component.literal("/prestige rarity <rarity> - Filters by COMMON, RARE, LEGENDARY..."))
+        player.sendSystemMessage(Component.literal("/prestige category <category> - Filters by CAPTURE, SHINY, BATTLE..."))
     }
 
     private fun listTitles(player: ServerPlayer) {
@@ -165,8 +166,8 @@ object CommonTitleCommands {
         val locked = data.lockedTitleId?.let(TitleRegistry::get)
         player.sendSystemMessage(
             CobblemonTrainerPrestige.prefix()
-                .append("Seus titulos:")
-                .append(if (locked == null) "" else " Travado: ${locked.displayName}")
+                .append("Your titles:")
+                .append(if (locked == null) "" else " Locked: ${locked.displayName}")
         )
         TitleRarity.entries.forEach { rarity ->
             val titles = TitleRegistry.all()
@@ -186,43 +187,43 @@ object CommonTitleCommands {
         val data = TitleStorage.data(player.server, player.uuid)
         val title = TitleProgressManager.equippedTitle(player)
         if (title == null) {
-            CobblemonTrainerPrestige.send(player, Component.literal("Nenhum titulo equipado."))
+            CobblemonTrainerPrestige.send(player, Component.literal("No title equipped."))
             return
         }
-        player.sendSystemMessage(CobblemonTrainerPrestige.prefix().append("Titulo atual:"))
+        player.sendSystemMessage(CobblemonTrainerPrestige.prefix().append("Current title:"))
         player.sendSystemMessage(TitleDisplayFormatter.decorated(title))
-        player.sendSystemMessage(Component.literal("Raridade: ${title.rarity.ptBrName}"))
-        player.sendSystemMessage(Component.literal("Categoria: ${title.category.ptBrName}"))
-        player.sendSystemMessage(Component.literal("Descricao: ${title.description}"))
-        player.sendSystemMessage(Component.literal("Auto-equip: ${if (data.lockedTitleId == title.id) "travado neste titulo" else "ativo"}"))
+        player.sendSystemMessage(Component.literal("Rarity: ${title.rarity.ptBrName}"))
+        player.sendSystemMessage(Component.literal("Category: ${title.category.ptBrName}"))
+        player.sendSystemMessage(Component.literal("Description: ${title.description}"))
+        player.sendSystemMessage(Component.literal("Auto-equip: ${if (data.lockedTitleId == title.id) "locked to this title" else "active"}"))
     }
 
     private fun info(player: ServerPlayer, titleId: String) {
         val title = TitleRegistry.get(titleId)
         if (title == null) {
-            CobblemonTrainerPrestige.send(player, Component.literal("Titulo nao encontrado."))
+            CobblemonTrainerPrestige.send(player, Component.literal("Title not found."))
             return
         }
         val data = TitleStorage.data(player.server, player.uuid)
         val unlocked = title.id in data.unlockedTitles
         val hidden = !unlocked && title.visibility != TitleVisibility.VISIBLE
         player.sendSystemMessage(Component.literal("[${title.visibleName(unlocked)}]").withStyle(title.rarity.fallbackColor))
-        player.sendSystemMessage(Component.literal("Raridade: ${title.rarity.ptBrName}"))
-        if (!hidden) player.sendSystemMessage(Component.literal("Categoria: ${title.category.ptBrName}"))
+        player.sendSystemMessage(Component.literal("Rarity: ${title.rarity.ptBrName}"))
+        if (!hidden) player.sendSystemMessage(Component.literal("Category: ${title.category.ptBrName}"))
         if (hidden && title.hintText.isNotBlank()) {
-            player.sendSystemMessage(Component.literal("Dica: ${title.hintText}"))
+            player.sendSystemMessage(Component.literal("Hint: ${title.hintText}"))
         } else {
-            player.sendSystemMessage(Component.literal("Como conseguir: ${title.visibleUnlockText(unlocked)}"))
+            player.sendSystemMessage(Component.literal("How to unlock: ${title.visibleUnlockText(unlocked)}"))
         }
         if (!unlocked && !hidden) {
-            player.sendSystemMessage(Component.literal("Progresso: ${title.requirement.current(data.progress)}/${title.requirement.target}"))
+            player.sendSystemMessage(Component.literal("Progress: ${title.requirement.current(data.progress)}/${title.requirement.target}"))
         }
-        player.sendSystemMessage(Component.literal("Status: ${if (unlocked) "Desbloqueado" else "Bloqueado"}"))
+        player.sendSystemMessage(Component.literal("Status: ${if (unlocked) "Unlocked" else "Locked"}"))
     }
 
     private fun progress(player: ServerPlayer) {
         val data = TitleStorage.data(player.server, player.uuid)
-        player.sendSystemMessage(CobblemonTrainerPrestige.prefix().append("Seu progresso:"))
+        player.sendSystemMessage(CobblemonTrainerPrestige.prefix().append("Your progress:"))
         TitleRegistry.all()
             .filter { it.id !in data.unlockedTitles && it.visibility == TitleVisibility.VISIBLE }
             .take(12)
@@ -245,23 +246,23 @@ object CommonTitleCommands {
                 return
             }
 
-            CobblemonTrainerPrestige.send(player, Component.literal("Categoria ou raridade invalida."))
+            CobblemonTrainerPrestige.send(player, Component.literal("Invalid category or rarity."))
             return
         }
         val data = TitleStorage.data(player.server, player.uuid)
-        player.sendSystemMessage(CobblemonTrainerPrestige.prefix().append("Categoria: ${category.ptBrName}"))
+        player.sendSystemMessage(CobblemonTrainerPrestige.prefix().append("Category: ${category.ptBrName}"))
         TitleRegistry.byCategory(category).forEachVisible(player, data.unlockedTitles)
     }
 
     private fun rarity(player: ServerPlayer, rawRarity: String) {
         val rarity = runCatching { TitleRarity.valueOf(rawRarity.uppercase()) }.getOrNull()
         if (rarity == null) {
-            CobblemonTrainerPrestige.send(player, Component.literal("Raridade invalida."))
+            CobblemonTrainerPrestige.send(player, Component.literal("Invalid rarity."))
             return
         }
 
         val data = TitleStorage.data(player.server, player.uuid)
-        player.sendSystemMessage(CobblemonTrainerPrestige.prefix().append("Raridade: ${rarity.ptBrName}"))
+        player.sendSystemMessage(CobblemonTrainerPrestige.prefix().append("Rarity: ${rarity.ptBrName}"))
         TitleRegistry.all()
             .filter { it.rarity == rarity }
             .filter { it.visibility != TitleVisibility.HIDDEN || it.id in data.unlockedTitles }

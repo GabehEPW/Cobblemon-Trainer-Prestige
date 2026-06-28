@@ -100,6 +100,6 @@ object CobblemonProgressHooks {
             TitleProgressManager.addProgress(event.player, "egg_hatched", 1)
         }
 
-        CobblemonTrainerPrestige.logger.info("Hooks Cobblemon do Trainer Prestige registrados.")
+        CobblemonTrainerPrestige.logger.info("Trainer Prestige Cobblemon hooks registered.")
     }
 }
