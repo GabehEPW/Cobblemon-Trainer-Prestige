@@ -1,0 +1,3 @@
+package com.nbp.cobblemon_trainer_prestige.network
+
+class OpenTitleScreenPacket

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "cobblemon_trainer_prestige",
+  "version": "${version}",
+  "name": "Cobblemon Trainer Prestige",
+  "description": "Sistema de titulos e progresso de treinador para Cobblemon.",
+  "authors": ["GabehEPW"],
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "com.nbp.cobblemon_trainer_prestige.fabric.CobblemonTrainerPrestigeFabric"
+      }
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.17.0",
+    "minecraft": "1.21.1",
+    "fabric-language-kotlin": "*"
+  },
+  "suggests": {
+    "cobblemon": "*"
+  }
+}

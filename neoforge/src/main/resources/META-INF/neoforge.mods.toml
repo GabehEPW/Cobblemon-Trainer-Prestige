@@ -1,0 +1,33 @@
+modLoader = "kotlinforforge"
+loaderVersion = "[5,)"
+license = "MIT"
+
+[[mods]]
+modId = "cobblemon_trainer_prestige"
+version = "${version}"
+displayName = "Cobblemon Trainer Prestige"
+authors = "GabehEPW"
+description = '''
+Sistema de titulos e progresso de treinador para Cobblemon.
+'''
+
+[[dependencies.cobblemon_trainer_prestige]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.cobblemon_trainer_prestige]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.cobblemon_trainer_prestige]]
+modId = "cobblemon"
+type = "optional"
+versionRange = "*"
+ordering = "AFTER"
+side = "BOTH"
