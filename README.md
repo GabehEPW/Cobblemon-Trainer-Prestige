@@ -1,3 +1,5 @@
+![Banner](https://i.imgur.com/Zp9MVK8.png)
+
 # Cobblemon Trainer Prestige
 
 **Cobblemon Trainer Prestige** is a **Cobblemon addon** that adds a complete title and prestige system for Minecraft servers.
@@ -6,7 +8,7 @@ Players unlock titles by catching Pokemon, winning battles, exploring the world,
 
 Titles can appear in chat, the player list, and above player names. The mod also includes an interactive `/prestige` menu so players can browse, equip, lock, and manage titles without memorizing every command.
 
----
+***
 
 ## Features
 
@@ -18,7 +20,8 @@ Titles can appear in chat, the player list, and above player names. The mod also
 * Chat title display
 * TAB/player list title icon display
 * Nameplate title icon display
-* Optional resource pack with pixel-art title textures
+* Optional pixel-art title texture resource pack
+* Textured title badges for chat, TAB/player list, and nameplates
 * Per-world and per-server title data
 * Category and rarity filters
 * Secret and mystery titles
@@ -30,7 +33,7 @@ Titles can appear in chat, the player list, and above player names. The mod also
 * Server-side configuration
 * Fabric and NeoForge support
 
----
+***
 
 ## How It Works
 
@@ -55,44 +58,44 @@ The menu lets players:
 * Unlock auto-equip again
 * Remove the current title
 
----
+***
 
 ## Title Rarities
 
 Titles are sorted by rarity and progression value.
 
-| Rarity      | Description                      |
-| ----------- | -------------------------------- |
-| Common      | Early and easy progression goals |
-| Uncommon    | Basic server progression         |
-| Rare        | Mid-game accomplishments         |
-| Epic        | Strong achievements              |
-| Legendary   | Major milestones                 |
-| Ultra Beast | Ultra Beast-related titles       |
-| Mythic      | Mythical or very rare titles     |
-| Secret      | Hidden or unusual requirements   |
+| Rarity | Description |
+| --- | --- |
+| Common | Early and easy progression goals |
+| Uncommon | Basic server progression |
+| Rare | Mid-game accomplishments |
+| Epic | Strong achievements |
+| Legendary | Major milestones |
+| Ultra Beast | Ultra Beast-related titles |
+| Mythic | Mythical or very rare titles |
+| Secret | Hidden or unusual requirements |
 
----
+***
 
 ## Title Categories
 
-| Category            | Description                                      |
-| ------------------- | ------------------------------------------------ |
-| General             | General progression and prestige milestones      |
-| Capture             | Catching Pokemon and filling the collection      |
-| Pokemon Types       | Mastery titles for catching specific types       |
-| Shiny               | Shiny hunting accomplishments                    |
-| Battle              | Battle, streak, PvP, and victory titles          |
-| Exploration         | Travel, biome, and world exploration titles      |
-| Legendaries         | Legendary Pokemon feats and ownership titles     |
-| Mythicals           | Mythical Pokemon feats and ownership titles      |
-| Ultra Beasts        | Ultra Beast feats and ownership titles           |
-| Breeding            | Egg hatching and breeding titles                 |
-| Social              | Player interaction titles                        |
-| Event               | Server event and special moment titles           |
-| Secret              | Mystery and hidden titles                        |
+| Category | Description |
+| --- | --- |
+| General | General progression and prestige milestones |
+| Capture | Catching Pokemon and filling the collection |
+| Pokemon Types | Mastery titles for catching specific types |
+| Shiny | Shiny hunting accomplishments |
+| Battle | Battle, streak, PvP, and victory titles |
+| Exploration | Travel, biome, and world exploration titles |
+| Legendaries | Legendary Pokemon feats and ownership titles |
+| Mythicals | Mythical Pokemon feats and ownership titles |
+| Ultra Beasts | Ultra Beast feats and ownership titles |
+| Breeding | Egg hatching and breeding titles |
+| Social | Player interaction titles |
+| Event | Server event and special moment titles |
+| Secret | Mystery and hidden titles |
 
----
+***
 
 ## Legendary, Mythical, and Ultra Beast Titles
 
@@ -110,74 +113,70 @@ If a player trades the Pokemon away, releases it, deletes it, or no longer owns 
 
 The mod scans online players automatically, so players do not need to run commands to update special ownership titles.
 
----
+***
 
 ## Optional Title Textures
 
-Trainer Prestige includes an optional resource pack for textured title badges.
+Trainer Prestige also supports an optional resource pack called **Trainer Prestige Resource**.
 
-Without the resource pack, titles use normal Minecraft text formatting. With the resource pack enabled, titles can appear as compact pixel-art badges in chat, TAB/player list, and nameplates.
+When enabled, titles can appear as custom pixel-art badges instead of plain text. These textured badges work in chat, the TAB/player list, and above player names.
 
-The resource pack is separate from the mod jar so servers and players can choose whether they want textured titles.
+The texture pack includes badges for progression titles, capture titles, shiny titles, battle titles, PvP titles, breeding titles, exploration titles, type mastery titles, legendary titles, mythical titles, Ultra Beast titles, event titles, secret titles, and special Pokemon ownership titles.
 
-Resource pack file:
+Special Pokemon titles, such as Hoopa, Mew, Rayquaza, Nihilego, and other legendary, mythical, or Ultra Beast Pokemon, have their own compact badge textures.
 
-```txt
-texture/Trainer Prestige Resource.zip
-```
+This resource pack is fully optional. Players who do not use it can still play normally with the default text titles.
 
-Display styles:
-
-| Style     | Description                                      |
-| --------- | ------------------------------------------------ |
-| `TEXT`    | Uses normal text titles                          |
-| `TEXTURE` | Uses textured title badges                       |
-| `BOTH`    | Shows the texture badge followed by text fallback |
-
-Admins can change the server display style with:
+Admins can choose the display style with:
 
 ```txt
 /prestige display <TEXT|TEXTURE|BOTH>
 ```
 
-Players need the optional resource pack enabled to see the textured badges. Players without the pack should use the normal text style.
+Display modes:
 
----
+| Mode | Description |
+| --- | --- |
+| <code>TEXT</code> | Uses normal text titles |
+| <code>TEXTURE</code> | Uses custom textured badges |
+| <code>BOTH</code> | Shows both the texture badge and text title |
+
+***
 
 ## Commands
 
 Normal player commands:
 
-| Command                          | Description                                      |
-| -------------------------------- | ------------------------------------------------ |
-| `/prestige`                      | Opens the interactive title menu                 |
-| `/prestige help`                 | Shows the command list                           |
-| `/prestige list`                 | Lists titles in chat                             |
-| `/prestige current`              | Shows the equipped title                         |
-| `/prestige equip <id>`           | Equips an unlocked title                         |
-| `/prestige lock [id]`            | Locks the current or chosen title                |
-| `/prestige unlock`               | Enables automatic best-title swapping again      |
-| `/prestige remove`               | Removes the current title                        |
-| `/prestige info <id>`            | Shows title details and progress                 |
-| `/prestige progress`             | Shows locked titles in progress                  |
-| `/prestige search <name>`        | Searches titles by name or id                    |
-| `/prestige rarity <rarity>`      | Filters titles by rarity                         |
-| `/prestige category <category>`  | Filters titles by category                       |
+| Command | Description |
+| --- | --- |
+| <code>/prestige</code> | Opens the interactive title menu |
+| <code>/prestige help</code> | Shows the command list |
+| <code>/prestige list</code> | Lists titles in chat |
+| <code>/prestige current</code> | Shows the equipped title |
+| <code>/prestige equip &lt;id&gt;</code> | Equips an unlocked title |
+| <code>/prestige lock [id]</code> | Locks the current or chosen title |
+| <code>/prestige unlock</code> | Enables automatic best-title swapping again |
+| <code>/prestige remove</code> | Removes the current title |
+| <code>/prestige info &lt;id&gt;</code> | Shows title details and progress |
+| <code>/prestige progress</code> | Shows locked titles in progress |
+| <code>/prestige search &lt;name&gt;</code> | Searches titles by name or id |
+| <code>/prestige rarity &lt;rarity&gt;</code> | Filters titles by rarity |
+| <code>/prestige category &lt;category&gt;</code> | Filters titles by category |
 
 Admin commands:
 
-| Command                                      | Description                         |
-| -------------------------------------------- | ----------------------------------- |
-| `/prestige grant <player> <id>`              | Grants a title                      |
-| `/prestige revoke <player> <id>`             | Revokes a title                     |
-| `/prestige set <player> <id>`                | Grants and equips a title           |
-| `/prestige reset <player>`                   | Resets a player's title data        |
-| `/prestige reload`                           | Reloads config and title registry   |
-| `/prestige display <TEXT\|TEXTURE\|BOTH>`    | Changes the server title display style |
-| `/prestige addprogress <player> <key> <amt>` | Adds progress to a player           |
-| `/prestige debug <player>`                   | Shows stored title data             |
+| Command | Description |
+| --- | --- |
+| <code>/prestige grant &lt;player&gt; &lt;id&gt;</code> | Grants a title |
+| <code>/prestige revoke &lt;player&gt; &lt;id&gt;</code> | Revokes a title |
+| <code>/prestige set &lt;player&gt; &lt;id&gt;</code> | Grants and equips a title |
+| <code>/prestige reset &lt;player&gt;</code> | Resets a player's title data |
+| <code>/prestige reload</code> | Reloads config and title registry |
+| <code>/prestige display &lt;TEXT\|TEXTURE\|BOTH&gt;</code> | Changes the title display style |
+| <code>/prestige addprogress &lt;player&gt; &lt;key&gt; &lt;amt&gt;</code> | Adds progress to a player |
+| <code>/prestige debug &lt;player&gt;</code> | Shows stored title data |
 
----
+***
 
 ## GUI
 
@@ -203,7 +202,7 @@ Inside title lists:
 * Locked titles show progress and unlock information
 * Titles are ordered from easier to harder where applicable
 
----
+***
 
 ## Configuration
 
@@ -217,23 +216,23 @@ Player title data is also stored per world/server, so titles unlocked in one wor
 
 Available config options include:
 
-| Option                         | Description                                      |
-| ------------------------------ | ------------------------------------------------ |
-| `showTitleInChat`              | Shows titles in chat                             |
-| `showTitleInTab`               | Shows title icons in the player list             |
-| `showTitleInNameplateFallback` | Enables scoreboard nameplate fallback display    |
-| `enableClientNameplateRendering` | Enables client nameplate rendering support     |
-| `allowSecretTitles`            | Allows secret titles                             |
-| `announceUnlocksGlobally`      | Announces unlocks to other players               |
-| `autoEquipFirstTitle`          | Gives new players the default title              |
-| `defaultTitle`                 | Default first title id                           |
-| `tabDisplayMode`               | Controls title display mode in TAB               |
-| `titleDisplayStyle`            | Controls text, texture, or combined title display |
-| `nameplateRenderDistance`      | Controls nameplate display distance              |
-| `hideTitleWhenSneaking`        | Hides nameplate title while sneaking              |
-| `requireCobblemon`             | Controls Cobblemon requirement behavior          |
+| Option | Description |
+| --- | --- |
+| <code>showTitleInChat</code> | Shows titles in chat |
+| <code>showTitleInTab</code> | Shows title icons in the player list |
+| <code>showTitleInNameplateFallback</code> | Enables scoreboard nameplate fallback display |
+| <code>enableClientNameplateRendering</code> | Enables client nameplate rendering support |
+| <code>allowSecretTitles</code> | Allows secret titles |
+| <code>announceUnlocksGlobally</code> | Announces unlocks to other players |
+| <code>autoEquipFirstTitle</code> | Gives new players the default title |
+| <code>defaultTitle</code> | Default first title id |
+| <code>tabDisplayMode</code> | Controls title display mode in TAB |
+| <code>titleDisplayStyle</code> | Controls text, texture, or combined title display |
+| <code>nameplateRenderDistance</code> | Controls nameplate display distance |
+| <code>hideTitleWhenSneaking</code> | Hides nameplate title while sneaking |
+| <code>requireCobblemon</code> | Controls Cobblemon requirement behavior |
 
----
+***
 
 ## Dependencies
 
@@ -253,13 +252,13 @@ Available config options include:
 * NeoForge
 * Kotlin for Forge
 
----
+***
 
 ## Short Summary
 
-**Cobblemon Trainer Prestige** adds a full title progression system to Cobblemon servers, with unlockable titles, rarity tiers, an interactive `/prestige` GUI, chat/TAB/nameplate display, auto-equip, title locking, and special ownership titles for legendary, mythical, and Ultra Beast Pokemon.
+**Cobblemon Trainer Prestige** adds a complete title progression system to Cobblemon servers, with unlockable titles, rarity tiers, an interactive `/prestige` GUI, chat/TAB/nameplate display, auto-equip, title locking, optional textured title badges, and special ownership titles for legendary, mythical, and Ultra Beast Pokemon.
 
----
+***
 
 ## License
 
