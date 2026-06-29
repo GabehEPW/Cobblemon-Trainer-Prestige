@@ -18,6 +18,7 @@ Titles can appear in chat, the player list, and above player names. The mod also
 * Chat title display
 * TAB/player list title icon display
 * Nameplate title icon display
+* Optional resource pack with pixel-art title textures
 * Per-world and per-server title data
 * Category and rarity filters
 * Secret and mystery titles
@@ -111,6 +112,38 @@ The mod scans online players automatically, so players do not need to run comman
 
 ---
 
+## Optional Title Textures
+
+Trainer Prestige includes an optional resource pack for textured title badges.
+
+Without the resource pack, titles use normal Minecraft text formatting. With the resource pack enabled, titles can appear as compact pixel-art badges in chat, TAB/player list, and nameplates.
+
+The resource pack is separate from the mod jar so servers and players can choose whether they want textured titles.
+
+Resource pack file:
+
+```txt
+texture/Trainer Prestige Resource.zip
+```
+
+Display styles:
+
+| Style     | Description                                      |
+| --------- | ------------------------------------------------ |
+| `TEXT`    | Uses normal text titles                          |
+| `TEXTURE` | Uses textured title badges                       |
+| `BOTH`    | Shows the texture badge followed by text fallback |
+
+Admins can change the server display style with:
+
+```txt
+/prestige display <TEXT|TEXTURE|BOTH>
+```
+
+Players need the optional resource pack enabled to see the textured badges. Players without the pack should use the normal text style.
+
+---
+
 ## Commands
 
 Normal player commands:
@@ -140,6 +173,7 @@ Admin commands:
 | `/prestige set <player> <id>`                | Grants and equips a title           |
 | `/prestige reset <player>`                   | Resets a player's title data        |
 | `/prestige reload`                           | Reloads config and title registry   |
+| `/prestige display <TEXT\|TEXTURE\|BOTH>`    | Changes the server title display style |
 | `/prestige addprogress <player> <key> <amt>` | Adds progress to a player           |
 | `/prestige debug <player>`                   | Shows stored title data             |
 
@@ -194,6 +228,7 @@ Available config options include:
 | `autoEquipFirstTitle`          | Gives new players the default title              |
 | `defaultTitle`                 | Default first title id                           |
 | `tabDisplayMode`               | Controls title display mode in TAB               |
+| `titleDisplayStyle`            | Controls text, texture, or combined title display |
 | `nameplateRenderDistance`      | Controls nameplate display distance              |
 | `hideTitleWhenSneaking`        | Hides nameplate title while sneaking              |
 | `requireCobblemon`             | Controls Cobblemon requirement behavior          |

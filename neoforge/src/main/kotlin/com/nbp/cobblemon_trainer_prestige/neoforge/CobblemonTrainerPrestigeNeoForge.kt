@@ -47,6 +47,7 @@ class CobblemonTrainerPrestigeNeoForge {
             title,
             event.rawText,
             TitleProgressManager.colorsPlayerName(event.player, title),
+            config.titleDisplayStyle,
         )
         event.isCanceled = true
         event.player.server.playerList.players.forEach { it.sendSystemMessage(formatted) }

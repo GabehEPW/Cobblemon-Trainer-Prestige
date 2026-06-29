@@ -161,11 +161,12 @@ object TitleProgressManager {
         data.equippedTitleId = title.id
         TitleStorage.save(player.server, data)
         TitleTabDisplayManager.refresh(player)
+        val displayStyle = TitleStorage.config(player.server).titleDisplayStyle
         player.sendSystemMessage(
             Component.empty()
                 .append(CobblemonTrainerPrestige.prefix())
                 .append("You equipped the title: ")
-                .append(TitleDisplayFormatter.decorated(title))
+                .append(TitleDisplayFormatter.decorated(title, displayStyle))
         )
         return true
     }
@@ -203,11 +204,12 @@ object TitleProgressManager {
         data.lockedTitleId = title.id
         TitleStorage.save(player.server, data)
         TitleTabDisplayManager.refresh(player)
+        val displayStyle = TitleStorage.config(player.server).titleDisplayStyle
         player.sendSystemMessage(
             Component.empty()
                 .append(CobblemonTrainerPrestige.prefix())
                 .append("Title locked: ")
-                .append(TitleDisplayFormatter.decorated(title))
+                .append(TitleDisplayFormatter.decorated(title, displayStyle))
         )
         return true
     }
@@ -219,13 +221,14 @@ object TitleProgressManager {
         autoEquipBestUnlocked(player, data)
         TitleStorage.save(player.server, data)
         TitleTabDisplayManager.refresh(player)
+        val displayStyle = TitleStorage.config(player.server).titleDisplayStyle
 
         val message = if (oldLocked == null) {
             Component.literal("No title was locked. Auto-equip enabled.")
         } else {
             Component.empty()
                 .append("Title unlocked: ")
-                .append(TitleDisplayFormatter.decorated(oldLocked))
+                .append(TitleDisplayFormatter.decorated(oldLocked, displayStyle))
                 .append(". Auto-equip enabled.")
         }
         player.sendSystemMessage(CobblemonTrainerPrestige.prefix().append(message))
@@ -250,11 +253,12 @@ object TitleProgressManager {
         data.equippedTitleId = best.id
         TitleTabDisplayManager.refresh(player)
         if (notify) {
+            val displayStyle = TitleStorage.config(player.server).titleDisplayStyle
             player.sendSystemMessage(
                 Component.empty()
                     .append(CobblemonTrainerPrestige.prefix())
                     .append("Best title auto-equipped: ")
-                    .append(TitleDisplayFormatter.decorated(best))
+                    .append(TitleDisplayFormatter.decorated(best, displayStyle))
             )
         }
     }

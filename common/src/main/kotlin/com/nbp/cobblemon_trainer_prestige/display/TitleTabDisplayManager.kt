@@ -32,7 +32,11 @@ object TitleTabDisplayManager {
         team.setPlayerPrefix(Component.empty())
         team.setPlayerSuffix(Component.empty())
 
-        team.setPlayerPrefix(TitleDisplayFormatter.compact(title).append(" "))
+        team.setPlayerPrefix(
+            Component.empty()
+                .append(TitleDisplayFormatter.compact(title, config.titleDisplayStyle))
+                .append(Component.literal(" "))
+        )
 
         val currentTeam = scoreboard.getPlayersTeam(playerName)
         if (currentTeam == null || currentTeam.name != teamName) {

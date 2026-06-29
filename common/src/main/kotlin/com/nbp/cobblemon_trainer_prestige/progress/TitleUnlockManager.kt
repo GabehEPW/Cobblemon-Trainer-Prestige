@@ -45,8 +45,9 @@ object TitleUnlockManager {
     }
 
     private fun notifyUnlock(player: ServerPlayer, title: Title) {
+        val displayStyle = TitleStorage.config(player.server).titleDisplayStyle
         player.sendSystemMessage(CobblemonTrainerPrestige.prefix().append("Title unlocked:"))
-        player.sendSystemMessage(TitleDisplayFormatter.decorated(title))
+        player.sendSystemMessage(TitleDisplayFormatter.decorated(title, displayStyle))
         player.sendSystemMessage(Component.literal("Rarity: ${title.rarity.ptBrName}").withStyle(title.rarity.fallbackColor))
 
         if (TitleStorage.config(player.server).announceUnlocksGlobally) {
@@ -57,7 +58,7 @@ object TitleUnlockManager {
                         Component.empty()
                             .append(CobblemonTrainerPrestige.prefix())
                             .append("${player.gameProfile.name} unlocked the title ")
-                            .append(TitleDisplayFormatter.decorated(title))
+                            .append(TitleDisplayFormatter.decorated(title, displayStyle))
                             .append("!")
                     )
                 }

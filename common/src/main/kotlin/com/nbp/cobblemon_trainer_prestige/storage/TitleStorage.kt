@@ -50,6 +50,7 @@ object TitleStorage {
         } else {
             TrainerPrestigeConfig()
         }
+        normalizeConfig(loaded)
         Files.createDirectories(path.parent)
         path.writer().use { gson.toJson(loaded, it) }
         configCache[worldKey] = loaded
@@ -58,6 +59,14 @@ object TitleStorage {
 
     fun reloadConfig() {
         configCache.clear()
+    }
+
+    fun saveConfig(server: MinecraftServer, config: TrainerPrestigeConfig) {
+        normalizeConfig(config)
+        val path = configPath(server)
+        Files.createDirectories(path.parent)
+        path.writer().use { gson.toJson(config, it) }
+        configCache[worldKey(server)] = config
     }
 
     fun claimFirstLegendaryCapture(server: MinecraftServer, titleId: String, uuid: UUID): Boolean {
@@ -140,6 +149,12 @@ object TitleStorage {
 
     private fun configPath(server: MinecraftServer): Path {
         return basePath(server).resolve("config.json")
+    }
+
+    @Suppress("SENSELESS_COMPARISON")
+    private fun normalizeConfig(config: TrainerPrestigeConfig) {
+        if (config.tabDisplayMode == null) config.tabDisplayMode = TabDisplayMode.PREFIX
+        if (config.titleDisplayStyle == null) config.titleDisplayStyle = TitleDisplayStyle.TEXT
     }
 
     private fun worldDataPath(server: MinecraftServer): Path {

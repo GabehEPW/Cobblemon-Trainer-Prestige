@@ -7,8 +7,10 @@ import com.mojang.brigadier.suggestion.Suggestions
 import com.mojang.brigadier.suggestion.SuggestionsBuilder
 import com.nbp.cobblemon_trainer_prestige.CobblemonTrainerPrestige
 import com.nbp.cobblemon_trainer_prestige.display.TitleDisplayFormatter
+import com.nbp.cobblemon_trainer_prestige.display.TitleTabDisplayManager
 import com.nbp.cobblemon_trainer_prestige.gui.PrestigeTitleGui
 import com.nbp.cobblemon_trainer_prestige.progress.TitleProgressManager
+import com.nbp.cobblemon_trainer_prestige.storage.TitleDisplayStyle
 import com.nbp.cobblemon_trainer_prestige.storage.TitleStorage
 import com.nbp.cobblemon_trainer_prestige.title.Title
 import com.nbp.cobblemon_trainer_prestige.title.TitleCategory
@@ -118,6 +120,13 @@ object CommonTitleCommands {
                     ctx.source.sendSuccess({ CobblemonTrainerPrestige.prefix().append("Config and titles reloaded.") }, false)
                     1
                 })
+                .then(literal("display").requires { it.hasPermission(2) }
+                    .then(argument("style", StringArgumentType.word())
+                        .suggests { _, builder -> suggestDisplayStyles(builder) }
+                        .executes { ctx ->
+                            setDisplayStyle(ctx.source, StringArgumentType.getString(ctx, "style"))
+                            1
+                        }))
                 .then(literal("addprogress").requires { it.hasPermission(2) }
                     .then(argument("player", EntityArgument.player())
                         .then(argument("progress_key", StringArgumentType.word())
@@ -159,6 +168,9 @@ object CommonTitleCommands {
         player.sendSystemMessage(Component.literal("/prestige search <name> - Searches titles by name or id."))
         player.sendSystemMessage(Component.literal("/prestige rarity <rarity> - Filters by COMMON, RARE, LEGENDARY..."))
         player.sendSystemMessage(Component.literal("/prestige category <category> - Filters by CAPTURE, SHINY, BATTLE..."))
+        if (player.hasPermissions(2)) {
+            player.sendSystemMessage(Component.literal("/prestige display <TEXT|TEXTURE|BOTH> - Changes title display style."))
+        }
     }
 
     private fun listTitles(player: ServerPlayer) {
@@ -190,11 +202,13 @@ object CommonTitleCommands {
             CobblemonTrainerPrestige.send(player, Component.literal("No title equipped."))
             return
         }
+        val displayStyle = TitleStorage.config(player.server).titleDisplayStyle
         player.sendSystemMessage(CobblemonTrainerPrestige.prefix().append("Current title:"))
-        player.sendSystemMessage(TitleDisplayFormatter.decorated(title))
+        player.sendSystemMessage(TitleDisplayFormatter.decorated(title, displayStyle))
         player.sendSystemMessage(Component.literal("Rarity: ${title.rarity.ptBrName}"))
         player.sendSystemMessage(Component.literal("Category: ${title.category.ptBrName}"))
         player.sendSystemMessage(Component.literal("Description: ${title.description}"))
+        player.sendSystemMessage(Component.literal("Display style: ${displayStyle.name}"))
         player.sendSystemMessage(Component.literal("Auto-equip: ${if (data.lockedTitleId == title.id) "locked to this title" else "active"}"))
     }
 
@@ -207,7 +221,12 @@ object CommonTitleCommands {
         val data = TitleStorage.data(player.server, player.uuid)
         val unlocked = title.id in data.unlockedTitles
         val hidden = !unlocked && title.visibility != TitleVisibility.VISIBLE
-        player.sendSystemMessage(Component.literal("[${title.visibleName(unlocked)}]").withStyle(title.rarity.fallbackColor))
+        val displayStyle = TitleStorage.config(player.server).titleDisplayStyle
+        if (unlocked) {
+            player.sendSystemMessage(TitleDisplayFormatter.bracket(title, displayStyle))
+        } else {
+            player.sendSystemMessage(Component.literal("[${title.visibleName(false)}]").withStyle(title.rarity.fallbackColor))
+        }
         player.sendSystemMessage(Component.literal("Rarity: ${title.rarity.ptBrName}"))
         if (!hidden) player.sendSystemMessage(Component.literal("Category: ${title.category.ptBrName}"))
         if (hidden && title.hintText.isNotBlank()) {
@@ -274,6 +293,27 @@ object CommonTitleCommands {
         source.sendSuccess({ Component.literal("Trainer Prestige debug ${target.gameProfile.name}: $data") }, false)
     }
 
+    private fun setDisplayStyle(source: CommandSourceStack, rawStyle: String) {
+        val style = runCatching { TitleDisplayStyle.valueOf(rawStyle.uppercase()) }.getOrNull()
+        if (style == null) {
+            source.sendFailure(CobblemonTrainerPrestige.prefix().append("Invalid display style. Use TEXT, TEXTURE, or BOTH."))
+            return
+        }
+
+        val config = TitleStorage.config(source.server)
+        config.titleDisplayStyle = style
+        TitleStorage.saveConfig(source.server, config)
+        TitleTabDisplayManager.refreshAll(source.server)
+        source.sendSuccess(
+            {
+                CobblemonTrainerPrestige.prefix()
+                    .append("Title display style set to ${style.name}. ")
+                    .append(if (style == TitleDisplayStyle.TEXTURE) "Players need the optional resource pack enabled." else "")
+            },
+            true,
+        )
+    }
+
     private fun suggestUnlockedTitles(source: CommandSourceStack, builder: SuggestionsBuilder): CompletableFuture<Suggestions> {
         val player = runCatching { source.playerOrException }.getOrNull()
             ?: return builder.buildFuture()
@@ -290,6 +330,10 @@ object CommonTitleCommands {
 
     private fun suggestRarities(builder: SuggestionsBuilder): CompletableFuture<Suggestions> {
         return suggestCaseInsensitive(TitleRarity.entries.map { it.name }, builder)
+    }
+
+    private fun suggestDisplayStyles(builder: SuggestionsBuilder): CompletableFuture<Suggestions> {
+        return suggestCaseInsensitive(TitleDisplayStyle.entries.map { it.name }, builder)
     }
 
     private fun suggestCaseInsensitive(values: Iterable<String>, builder: SuggestionsBuilder): CompletableFuture<Suggestions> {

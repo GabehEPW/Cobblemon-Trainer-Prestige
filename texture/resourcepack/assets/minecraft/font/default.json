@@ -1,0 +1,1377 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/primeiro_duelo.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE500"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/primeiro_ovo.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE501"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/pequeno_colecionador.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE502"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/primeiro_parceiro.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE503"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/treinador_iniciante.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE504"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/curioso.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE505"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/explorador.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE506"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/aprendiz_de_campo.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE507"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/novato.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE508"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/primeiros_passos.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE509"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/treinador_casual.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE50A"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/invicto.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE50B"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/sem_piedade.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE50C"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/sequencia_competitiva.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE50D"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_criador.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE50E"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_da_pokedex.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE50F"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/treinador_veterano.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE510"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/andarilho.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE511"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/prestigio_ii.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE512"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/testemunha_lendaria.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE513"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/cacador_de_shinies.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE514"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/domador_de_dragoes.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE515"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_das_fadas.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE516"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/campeao_local.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE517"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/virada_impossivel.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE518"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/lenda_da_criacao.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE519"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/lenda_da_pokedex.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE51A"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/guardiao_do_mundo.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE51B"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_treinador.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE51C"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/prestigio_iii.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE51D"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/domador_lendario.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE51E"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_articuno.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE51F"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_azelf.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE520"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_calyrex.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE521"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_chienpao.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE522"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_chiyu.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE523"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_cobalion.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE524"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_cosmoem.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE525"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_cosmog.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE526"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_cresselia.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE527"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_dialga.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE528"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_enamorus.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE529"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_entei.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE52A"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_eternatus.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE52B"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_fezandipiti.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE52C"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_giratina.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE52D"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_glastrier.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE52E"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_groudon.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE52F"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_heatran.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE530"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_hooh.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE531"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_koraidon.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE532"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_kubfu.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE533"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_kyogre.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE534"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_kyurem.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE535"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_landorus.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE536"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_latias.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE537"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_latios.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE538"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_lugia.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE539"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_lunala.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE53A"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_mesprit.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE53B"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_mewtwo.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE53C"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_miraidon.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE53D"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_moltres.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE53E"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_munkidori.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE53F"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_necrozma.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE540"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_ogerpon.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE541"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_okidogi.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE542"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_palkia.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE543"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_raikou.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE544"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_rayquaza.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE545"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_regice.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE546"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_regidrago.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE547"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_regieleki.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE548"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_regigigas.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE549"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_regirock.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE54A"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_registeel.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE54B"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_reshiram.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE54C"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_silvally.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE54D"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_solgaleo.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE54E"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_spectrier.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE54F"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_suicune.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE550"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_tapubulu.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE551"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_tapufini.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE552"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_tapukoko.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE553"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_tapulele.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE554"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_terapagos.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE555"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_terrakion.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE556"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_thundurus.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE557"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_tinglu.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE558"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_tornadus.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE559"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_typenull.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE55A"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_urshifu.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE55B"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_uxie.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE55C"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_virizion.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE55D"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_wochien.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE55E"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_xerneas.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE55F"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_yveltal.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE560"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_zacian.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE561"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_zamazenta.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE562"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_zapdos.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE563"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_zekrom.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE564"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_de_zygarde.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE565"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/ima_de_shiny.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE566"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/a_lenda_do_servidor.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE567"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/prestigio_maximo.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE568"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/treinador_absoluto.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE569"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/cacador_de_mitos.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE56A"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_das_lendas.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE56B"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/domador_mitico.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE56C"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_arceus.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE56D"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_celebi.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE56E"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_darkrai.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE56F"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_deoxys.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE570"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_diancie.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE571"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_genesect.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE572"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_hoopa.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE573"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_jirachi.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE574"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_keldeo.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE575"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_magearna.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE576"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_manaphy.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE577"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_marshadow.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE578"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_melmetal.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE579"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_meloetta.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE57A"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_meltan.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE57B"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_mew.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE57C"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_pecharunt.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE57D"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_phione.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE57E"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_shaymin.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE57F"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_victini.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE580"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_volcanion.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE581"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_zarude.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE582"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_mitico_de_zeraora.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE583"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/lenda_brilhante.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE584"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/estrategista.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE585"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/rival_de_respeito.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE586"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/criador_dedicado.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE587"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/pesquisador_de_campo.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE588"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/treinador_experiente.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE589"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/aventureiro.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE58A"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/prestigio_i.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE58B"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/toque_brilhante.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE58C"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/amigo_de_batalha.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE58D"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/comandante_de_aco.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE58E"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/coracao_de_pedra.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE58F"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/domador_dos_ceus.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE590"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/guardiao_da_floresta.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE591"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mente_psiquica.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE592"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_aquatico.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE593"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_das_chamas.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE594"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_dos_eletricos.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE595"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/punhos_de_aco.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE596"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/rei_dos_insetos.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE597"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/senhor_da_terra.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE598"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/senhor_das_sombras.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE599"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/senhor_do_gelo.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE59A"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/treinador_fantasma.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE59B"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/venenoso.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE59C"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/quase_la.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE59D"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/rival_publico.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE59E"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/primeiro_campeao.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE59F"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/o_imortal.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5A0"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/perdido_no_mundo.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5A1"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/teimoso.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5A2"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/abencoado_pelo_rng.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5A3"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/fantasma_do_servidor.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5A4"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_do_caos.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5A5"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_do_nada.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5A6"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/o_azarado.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5A7"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/o_escolhido.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5A8"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/sem_pokebola_nao_da.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5A9"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/sofrimento_cromatico.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5AA"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/sortudo_demais.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5AB"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/domador_ultra.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5AC"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_ultra_de_blacephalon.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5AD"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_ultra_de_buzzwole.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5AE"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_ultra_de_celesteela.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5AF"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_ultra_de_guzzlord.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5B0"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_ultra_de_kartana.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5B1"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_ultra_de_naganadel.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5B2"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_ultra_de_nihilego.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5B3"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_ultra_de_pheromosa.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5B4"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_ultra_de_poipole.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5B5"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_ultra_de_stakataka.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5B6"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mestre_ultra_de_xurkitree.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5B7"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/aprendiz_de_estrategia.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5B8"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/duelista.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5B9"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/primeira_vitoria_pvp.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5BA"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/cuidador_de_ovos.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5BB"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/colecionador.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5BC"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/treinador_promissor.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5BD"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/mochileiro.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5BE"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/viajante.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5BF"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/evolucionista.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5C0"]
+    },
+    {
+      "type": "bitmap",
+      "file": "cobblemon_trainer_prestige:font/titles/treinador_persistente.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": ["\uE5C1"]
+    },
+    {
+      "type": "reference",
+      "id": "minecraft:include/space"
+    },
+    {
+      "type": "reference",
+      "id": "minecraft:include/default",
+      "filter": {
+        "uniform": false
+      }
+    },
+    {
+      "type": "reference",
+      "id": "minecraft:include/unifont"
+    }
+  ]
+}

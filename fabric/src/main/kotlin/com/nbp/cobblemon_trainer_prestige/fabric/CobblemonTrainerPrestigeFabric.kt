@@ -45,6 +45,7 @@ class CobblemonTrainerPrestigeFabric : ModInitializer {
                     title,
                     message.signedContent(),
                     TitleProgressManager.colorsPlayerName(sender, title),
+                    config.titleDisplayStyle,
                 )
                 sender.server.playerList.players.forEach { it.sendSystemMessage(formatted) }
                 false

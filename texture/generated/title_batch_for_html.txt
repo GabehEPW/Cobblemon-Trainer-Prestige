@@ -1,0 +1,194 @@
+First Duel | #F3F4F6 | sword | #2563EB
+First Egg | #F3F4F6 | egg | #2563EB
+Collector | #F3F4F6 | pokeball | #2563EB
+Partner | #F3F4F6 | pokeball | #2563EB
+Beginner | #F3F4F6 | pokeball | #2563EB
+Curious | #F3F4F6 | map | #2563EB
+Explorer | #F3F4F6 | map | #2563EB
+Field Appr | #F3F4F6 | shield | #2563EB
+Rookie | #F3F4F6 | shield | #2563EB
+First Steps | #F3F4F6 | shield | #2563EB
+Casual | #F3F4F6 | shield | #2563EB
+Undefeated | #9333EA | sword | #FDE047
+Merciless | #9333EA | sword | #FDE047
+Streak | #9333EA | sword | #FDE047
+Master Breed | #9333EA | egg | #FDE047
+Pokedex | #9333EA | pokeball | #FDE047
+Veteran | #9333EA | pokeball | #FDE047
+Wanderer | #9333EA | map | #FDE047
+Prestige II | #9333EA | shield | #FDE047
+Witness | #9333EA | star | #FDE047
+Shiny Hunter | #9333EA | sparkle | #FDE047
+Dragon Tamer | #9333EA | diamond | #FDE047
+Fairy Master | #9333EA | diamond | #FDE047
+Champion | #D97706 | sword | #FFFFFF
+Comeback | #D97706 | sword | #FFFFFF
+Breed Legend | #D97706 | egg | #FFFFFF
+Dex Legend | #D97706 | pokeball | #FFFFFF
+Guardian | #D97706 | map | #FFFFFF
+Master | #D97706 | shield | #FFFFFF
+Prestige III | #D97706 | shield | #FFFFFF
+Legend Tamer | #D97706 | star | #FFFFFF
+Articuno | #D97706 | star | #FFFFFF
+Azelf | #D97706 | star | #FFFFFF
+Calyrex | #D97706 | star | #FFFFFF
+Chien-Pao | #D97706 | star | #FFFFFF
+Chi-Yu | #D97706 | star | #FFFFFF
+Cobalion | #D97706 | star | #FFFFFF
+Cosmoem | #D97706 | star | #FFFFFF
+Cosmog | #D97706 | star | #FFFFFF
+Cresselia | #D97706 | star | #FFFFFF
+Dialga | #D97706 | star | #FFFFFF
+Enamorus | #D97706 | star | #FFFFFF
+Entei | #D97706 | star | #FFFFFF
+Eternatus | #D97706 | star | #FFFFFF
+Fezandipiti | #D97706 | star | #FFFFFF
+Giratina | #D97706 | star | #FFFFFF
+Glastrier | #D97706 | star | #FFFFFF
+Groudon | #D97706 | star | #FFFFFF
+Heatran | #D97706 | star | #FFFFFF
+Ho-Oh | #D97706 | star | #FFFFFF
+Koraidon | #D97706 | star | #FFFFFF
+Kubfu | #D97706 | star | #FFFFFF
+Kyogre | #D97706 | star | #FFFFFF
+Kyurem | #D97706 | star | #FFFFFF
+Landorus | #D97706 | star | #FFFFFF
+Latias | #D97706 | star | #FFFFFF
+Latios | #D97706 | star | #FFFFFF
+Lugia | #D97706 | star | #FFFFFF
+Lunala | #D97706 | star | #FFFFFF
+Mesprit | #D97706 | star | #FFFFFF
+Mewtwo | #D97706 | star | #FFFFFF
+Miraidon | #D97706 | star | #FFFFFF
+Moltres | #D97706 | star | #FFFFFF
+Munkidori | #D97706 | star | #FFFFFF
+Necrozma | #D97706 | star | #FFFFFF
+Ogerpon | #D97706 | star | #FFFFFF
+Okidogi | #D97706 | star | #FFFFFF
+Palkia | #D97706 | star | #FFFFFF
+Raikou | #D97706 | star | #FFFFFF
+Rayquaza | #D97706 | star | #FFFFFF
+Regice | #D97706 | star | #FFFFFF
+Regidrago | #D97706 | star | #FFFFFF
+Regieleki | #D97706 | star | #FFFFFF
+Regigigas | #D97706 | star | #FFFFFF
+Regirock | #D97706 | star | #FFFFFF
+Registeel | #D97706 | star | #FFFFFF
+Reshiram | #D97706 | star | #FFFFFF
+Silvally | #D97706 | star | #FFFFFF
+Solgaleo | #D97706 | star | #FFFFFF
+Spectrier | #D97706 | star | #FFFFFF
+Suicune | #D97706 | star | #FFFFFF
+Tapu Bulu | #D97706 | star | #FFFFFF
+Tapu Fini | #D97706 | star | #FFFFFF
+Tapu Koko | #D97706 | star | #FFFFFF
+Tapu Lele | #D97706 | star | #FFFFFF
+Terapagos | #D97706 | star | #FFFFFF
+Terrakion | #D97706 | star | #FFFFFF
+Thundurus | #D97706 | star | #FFFFFF
+Ting-Lu | #D97706 | star | #FFFFFF
+Tornadus | #D97706 | star | #FFFFFF
+Type Null | #D97706 | star | #FFFFFF
+Urshifu | #D97706 | star | #FFFFFF
+Uxie | #D97706 | star | #FFFFFF
+Virizion | #D97706 | star | #FFFFFF
+Wo-Chien | #D97706 | star | #FFFFFF
+Xerneas | #D97706 | star | #FFFFFF
+Yveltal | #D97706 | star | #FFFFFF
+Zacian | #D97706 | star | #FFFFFF
+Zamazenta | #D97706 | star | #FFFFFF
+Zapdos | #D97706 | star | #FFFFFF
+Zekrom | #D97706 | star | #FFFFFF
+Zygarde | #D97706 | star | #FFFFFF
+Shiny Magnet | #D97706 | sparkle | #FFFFFF
+Server Legend | #DB2777 | crown | #FDE047
+Max Prestige | #DB2777 | shield | #FDE047
+Absolute | #DB2777 | shield | #FDE047
+Myth Hunter | #DB2777 | star | #FDE047
+Legends | #DB2777 | star | #FDE047
+Mythic Tamer | #DB2777 | sparkle | #FDE047
+Arceus | #DB2777 | sparkle | #FDE047
+Celebi | #DB2777 | sparkle | #FDE047
+Darkrai | #DB2777 | sparkle | #FDE047
+Deoxys | #DB2777 | sparkle | #FDE047
+Diancie | #DB2777 | sparkle | #FDE047
+Genesect | #DB2777 | sparkle | #FDE047
+Hoopa | #DB2777 | sparkle | #FDE047
+Jirachi | #DB2777 | sparkle | #FDE047
+Keldeo | #DB2777 | sparkle | #FDE047
+Magearna | #DB2777 | sparkle | #FDE047
+Manaphy | #DB2777 | sparkle | #FDE047
+Marshadow | #DB2777 | sparkle | #FDE047
+Melmetal | #DB2777 | sparkle | #FDE047
+Meloetta | #DB2777 | sparkle | #FDE047
+Meltan | #DB2777 | sparkle | #FDE047
+Mew | #DB2777 | sparkle | #FDE047
+Pecharunt | #DB2777 | sparkle | #FDE047
+Phione | #DB2777 | sparkle | #FDE047
+Shaymin | #DB2777 | sparkle | #FDE047
+Victini | #DB2777 | sparkle | #FDE047
+Volcanion | #DB2777 | sparkle | #FDE047
+Zarude | #DB2777 | sparkle | #FDE047
+Zeraora | #DB2777 | sparkle | #FDE047
+Shiny Legend | #DB2777 | sparkle | #FDE047
+Strategist | #0284C7 | sword | #FDE047
+Rival | #0284C7 | sword | #FDE047
+Breeder | #0284C7 | egg | #FDE047
+Researcher | #0284C7 | pokeball | #FDE047
+Experienced | #0284C7 | pokeball | #FDE047
+Adventurer | #0284C7 | map | #FDE047
+Prestige I | #0284C7 | shield | #FDE047
+Shiny Touch | #0284C7 | sparkle | #FDE047
+Battle Friend | #0284C7 | heart | #FDE047
+Steel Cmdr | #0284C7 | diamond | #FDE047
+Stone Heart | #0284C7 | diamond | #FDE047
+Sky Tamer | #0284C7 | diamond | #FDE047
+Forest | #0284C7 | diamond | #FDE047
+Psychic | #0284C7 | diamond | #FDE047
+Aquatic Master | #0284C7 | diamond | #FDE047
+Flames | #0284C7 | diamond | #FDE047
+Sparks | #0284C7 | diamond | #FDE047
+Steel Fists | #0284C7 | diamond | #FDE047
+Bug King | #0284C7 | diamond | #FDE047
+Earth Lord | #0284C7 | diamond | #FDE047
+Shadows | #0284C7 | diamond | #FDE047
+Ice Lord | #0284C7 | diamond | #FDE047
+Ghost | #0284C7 | diamond | #FDE047
+Toxic | #0284C7 | diamond | #FDE047
+So Close | #7F1D1D | sword | #FDE047
+Rival | #7F1D1D | sword | #FDE047
+Champion | #7F1D1D | crown | #FDE047
+The Immortal | #7F1D1D | map | #FDE047
+Lost | #7F1D1D | map | #FDE047
+Stubborn | #7F1D1D | shield | #FDE047
+RNG Blessed | #7F1D1D | text:? | #FDE047
+Ghost | #7F1D1D | text:? | #FDE047
+Chaos | #7F1D1D | text:? | #FDE047
+Nothing | #7F1D1D | text:? | #FDE047
+Unlucky | #7F1D1D | text:? | #FDE047
+Chosen | #7F1D1D | text:? | #FDE047
+No Ball | #7F1D1D | text:? | #FDE047
+Chromatic | #7F1D1D | text:? | #FDE047
+Too Lucky | #7F1D1D | text:? | #FDE047
+Ultra Tamer | #5B21B6 | diamond | #FDE047
+Blacephalon | #5B21B6 | diamond | #FDE047
+Buzzwole | #5B21B6 | diamond | #FDE047
+Celesteela | #5B21B6 | diamond | #FDE047
+Guzzlord | #5B21B6 | diamond | #FDE047
+Kartana | #5B21B6 | diamond | #FDE047
+Naganadel | #5B21B6 | diamond | #FDE047
+Nihilego | #5B21B6 | diamond | #FDE047
+Pheromosa | #5B21B6 | diamond | #FDE047
+Poipole | #5B21B6 | diamond | #FDE047
+Stakataka | #5B21B6 | diamond | #FDE047
+Xurkitree | #5B21B6 | diamond | #FDE047
+Strategy | #16A34A | sword | #FDE047
+Duelist | #16A34A | sword | #FDE047
+PvP Victory | #16A34A | sword | #FDE047
+Egg Care | #16A34A | egg | #FDE047
+Collector | #16A34A | pokeball | #FDE047
+Promising | #16A34A | pokeball | #FDE047
+Backpacker | #16A34A | map | #FDE047
+Traveler | #16A34A | map | #FDE047
+Evolutionist | #16A34A | shield | #FDE047
+Persistent | #16A34A | shield | #FDE047
