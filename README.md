@@ -1,4 +1,4 @@
-![Banner](https://i.imgur.com/Zp9MVK8.png)
+![Banner](https://i.imgur.com/PpyhcZC.png)
 
 # Cobblemon Trainer Prestige
 
