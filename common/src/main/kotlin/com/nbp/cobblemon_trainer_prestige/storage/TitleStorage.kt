@@ -154,6 +154,7 @@ object TitleStorage {
     @Suppress("SENSELESS_COMPARISON")
     private fun normalizeConfig(config: TrainerPrestigeConfig) {
         if (config.tabDisplayMode == null) config.tabDisplayMode = TabDisplayMode.PREFIX
+        if (config.tabTitleDisplay == null) config.tabTitleDisplay = TabTitleDisplay.COMPACT
         if (config.titleDisplayStyle == null) config.titleDisplayStyle = TitleDisplayStyle.TEXT
     }
 

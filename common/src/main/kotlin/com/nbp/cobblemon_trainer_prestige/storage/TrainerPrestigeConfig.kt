@@ -10,6 +10,7 @@ data class TrainerPrestigeConfig(
     var autoEquipFirstTitle: Boolean = true,
     var defaultTitle: String = "novato",
     var tabDisplayMode: TabDisplayMode = TabDisplayMode.PREFIX,
+    var tabTitleDisplay: TabTitleDisplay = TabTitleDisplay.COMPACT,
     var titleDisplayStyle: TitleDisplayStyle = TitleDisplayStyle.TEXT,
     var nameplateRenderDistance: Int = 32,
     var hideTitleWhenSneaking: Boolean = true,
@@ -26,5 +27,11 @@ enum class TabDisplayMode {
     PREFIX,
     SUFFIX,
     CLEAN_SUFFIX,
+    DISABLED,
+}
+
+enum class TabTitleDisplay {
+    COMPACT,
+    FULL,
     DISABLED,
 }

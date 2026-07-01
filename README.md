@@ -20,6 +20,7 @@ Titles can appear in chat, the player list, and above player names. The mod also
 * Chat title display
 * TAB/player list title icon display
 * Nameplate title icon display
+* `/prestige debug` diagnostics for server support
 * Optional pixel-art title texture resource pack
 * Textured title badges for chat, TAB/player list, and nameplates
 * Per-world and per-server title data
@@ -143,6 +144,42 @@ Display modes:
 
 ***
 
+## Server Compatibility
+
+Trainer Prestige uses vanilla Minecraft chat components and scoreboard team formatting for title display.
+
+On normal Fabric/NeoForge servers, titles can appear in chat, TAB/player list, and nameplates. On hybrid servers or servers with chat/display plugins, another plugin may overwrite part of the display after Trainer Prestige applies it.
+
+Common plugins to check:
+
+* Essentials
+* TAB
+* LuckPerms chat or prefix formatting
+* Nickname, display name, scoreboard, or chat formatting plugins
+
+Important notes:
+
+* TAB/player list titles use compact symbols by default so long titles do not cover player names.
+* Full titles are still shown in chat when chat formatting is not being replaced.
+* If chat appears as `<Player> message`, another plugin is probably controlling the chat format.
+* If TAB works but chat does not, the title is usually unlocked and equipped correctly, but chat formatting is being overwritten.
+
+Players and admins can run:
+
+```txt
+/prestige debug
+```
+
+Admins can also inspect another online player:
+
+```txt
+/prestige debug <player>
+```
+
+This shows the equipped title, display settings, TAB mode, display style, and whether the player is currently on a Trainer Prestige scoreboard team.
+
+---
+
 ## Commands
 
 Normal player commands:
@@ -162,6 +199,7 @@ Normal player commands:
 | <code>/prestige search &lt;name&gt;</code> | Searches titles by name or id |
 | <code>/prestige rarity &lt;rarity&gt;</code> | Filters titles by rarity |
 | <code>/prestige category &lt;category&gt;</code> | Filters titles by category |
+| <code>/prestige debug</code> | Shows title display diagnostics |
 
 Admin commands:
 
@@ -174,7 +212,7 @@ Admin commands:
 | <code>/prestige reload</code> | Reloads config and title registry |
 | <code>/prestige display &lt;TEXT\|TEXTURE\|BOTH&gt;</code> | Changes the title display style |
 | <code>/prestige addprogress &lt;player&gt; &lt;key&gt; &lt;amt&gt;</code> | Adds progress to a player |
-| <code>/prestige debug &lt;player&gt;</code> | Shows stored title data |
+| <code>/prestige debug &lt;player&gt;</code> | Shows another player's display diagnostics |
 
 ***
 
@@ -226,7 +264,8 @@ Available config options include:
 | <code>announceUnlocksGlobally</code> | Announces unlocks to other players |
 | <code>autoEquipFirstTitle</code> | Gives new players the default title |
 | <code>defaultTitle</code> | Default first title id |
-| <code>tabDisplayMode</code> | Controls title display mode in TAB |
+| <code>tabDisplayMode</code> | Controls TAB position mode: <code>PREFIX</code>, <code>SUFFIX</code>, <code>CLEAN_SUFFIX</code>, or <code>DISABLED</code> |
+| <code>tabTitleDisplay</code> | Controls TAB title length: <code>COMPACT</code>, <code>FULL</code>, or <code>DISABLED</code> |
 | <code>titleDisplayStyle</code> | Controls text, texture, or combined title display |
 | <code>nameplateRenderDistance</code> | Controls nameplate display distance |
 | <code>hideTitleWhenSneaking</code> | Hides nameplate title while sneaking |

@@ -140,8 +140,12 @@ object CommonTitleCommands {
                                 ctx.source.sendSuccess({ CobblemonTrainerPrestige.prefix().append("Progress updated.") }, false)
                                 1
                             }))))
-                .then(literal("debug").requires { it.hasPermission(2) }
-                    .then(argument("player", EntityArgument.player()).executes { ctx ->
+                .then(literal("debug")
+                    .executes { ctx ->
+                        debug(ctx.source, ctx.source.playerOrException)
+                        1
+                    }
+                    .then(argument("player", EntityArgument.player()).requires { it.hasPermission(2) }.executes { ctx ->
                         debug(ctx.source, EntityArgument.getPlayer(ctx, "player"))
                         1
                     }))
@@ -168,8 +172,11 @@ object CommonTitleCommands {
         player.sendSystemMessage(Component.literal("/prestige search <name> - Searches titles by name or id."))
         player.sendSystemMessage(Component.literal("/prestige rarity <rarity> - Filters by COMMON, RARE, LEGENDARY..."))
         player.sendSystemMessage(Component.literal("/prestige category <category> - Filters by CAPTURE, SHINY, BATTLE..."))
+        player.sendSystemMessage(Component.literal("/prestige debug - Shows title display diagnostics."))
+        player.sendSystemMessage(Component.literal("Note: chat plugins may override title chat prefixes. If TAB works but chat shows <Player>, check Essentials/TAB/LuckPerms formatting."))
         if (player.hasPermissions(2)) {
             player.sendSystemMessage(Component.literal("/prestige display <TEXT|TEXTURE|BOTH> - Changes title display style."))
+            player.sendSystemMessage(Component.literal("/prestige debug <player> - Shows another player's diagnostics."))
         }
     }
 
@@ -290,7 +297,33 @@ object CommonTitleCommands {
 
     private fun debug(source: CommandSourceStack, target: ServerPlayer) {
         val data = TitleStorage.data(target.server, target.uuid)
-        source.sendSuccess({ Component.literal("Trainer Prestige debug ${target.gameProfile.name}: $data") }, false)
+        val config = TitleStorage.config(target.server)
+        val title = data.equippedTitleId?.let(TitleRegistry::get)
+        val team = target.server.scoreboard.getPlayersTeam(target.scoreboardName)
+        val trainerPrestigeTeam = team?.name?.startsWith("tp_") == true
+        val chatReady = title != null && config.showTitleInChat && title.showInChat
+        val tabReady = title != null &&
+            config.showTitleInTab &&
+            title.showInTab &&
+            config.tabDisplayMode != com.nbp.cobblemon_trainer_prestige.storage.TabDisplayMode.DISABLED &&
+            config.tabTitleDisplay != com.nbp.cobblemon_trainer_prestige.storage.TabTitleDisplay.DISABLED
+        val nameplateReady = title != null &&
+            (config.showTitleInNameplateFallback || config.enableClientNameplateRendering) &&
+            title.showInNameplate
+
+        source.sendSuccess({ CobblemonTrainerPrestige.prefix().append("Debug for ${target.gameProfile.name}:") }, false)
+        source.sendSuccess({ Component.literal("Equipped: ${title?.displayName ?: "none"} (${data.equippedTitleId ?: "none"})") }, false)
+        source.sendSuccess({ Component.literal("Locked title: ${data.lockedTitleId ?: "none"}") }, false)
+        source.sendSuccess({ Component.literal("Unlocked titles: ${data.unlockedTitles.size}") }, false)
+        source.sendSuccess({ Component.literal("Chat ready: $chatReady | config=${config.showTitleInChat} | title=${title?.showInChat ?: false}") }, false)
+        source.sendSuccess({ Component.literal("TAB ready: $tabReady | config=${config.showTitleInTab} | mode=${config.tabDisplayMode} | titleDisplay=${config.tabTitleDisplay}") }, false)
+        source.sendSuccess({ Component.literal("Nameplate ready: $nameplateReady | fallback=${config.showTitleInNameplateFallback} | client=${config.enableClientNameplateRendering}") }, false)
+        source.sendSuccess({ Component.literal("Display style: ${config.titleDisplayStyle}") }, false)
+        source.sendSuccess({ Component.literal("Scoreboard team: ${team?.name ?: "none"} | Trainer Prestige team: $trainerPrestigeTeam") }, false)
+        if (team != null) {
+            source.sendSuccess({ Component.literal("Team prefix: '${team.playerPrefix.string}' | suffix: '${team.playerSuffix.string}' | color=${team.color}") }, false)
+        }
+        source.sendSuccess({ Component.literal("Compatibility: if Chat ready=true but chat still appears as <Player> message, another chat/display plugin is probably overriding chat formatting.") }, false)
     }
 
     private fun setDisplayStyle(source: CommandSourceStack, rawStyle: String) {

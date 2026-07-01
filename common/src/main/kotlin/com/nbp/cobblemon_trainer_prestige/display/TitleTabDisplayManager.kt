@@ -1,6 +1,7 @@
 package com.nbp.cobblemon_trainer_prestige.display
 
 import com.nbp.cobblemon_trainer_prestige.storage.TabDisplayMode
+import com.nbp.cobblemon_trainer_prestige.storage.TabTitleDisplay
 import com.nbp.cobblemon_trainer_prestige.storage.TitleStorage
 import com.nbp.cobblemon_trainer_prestige.title.Title
 import com.nbp.cobblemon_trainer_prestige.title.TitleRarity
@@ -20,7 +21,13 @@ object TitleTabDisplayManager {
         val title = data.equippedTitleId?.let(TitleRegistry::get)
         val config = TitleStorage.config(player.server)
 
-        if (title == null || !config.showTitleInTab || !title.showInTab || config.tabDisplayMode == TabDisplayMode.DISABLED) {
+        if (
+            title == null ||
+            !config.showTitleInTab ||
+            !title.showInTab ||
+            config.tabDisplayMode == TabDisplayMode.DISABLED ||
+            config.tabTitleDisplay == TabTitleDisplay.DISABLED
+        ) {
             clear(player)
             return
         }
@@ -32,11 +39,18 @@ object TitleTabDisplayManager {
         team.setPlayerPrefix(Component.empty())
         team.setPlayerSuffix(Component.empty())
 
-        team.setPlayerPrefix(
-            Component.empty()
-                .append(TitleDisplayFormatter.compact(title, config.titleDisplayStyle))
-                .append(Component.literal(" "))
-        )
+        val titleComponent = when (config.tabTitleDisplay) {
+            TabTitleDisplay.COMPACT -> TitleDisplayFormatter.compact(title, config.titleDisplayStyle)
+            TabTitleDisplay.FULL -> TitleDisplayFormatter.bracket(title, config.titleDisplayStyle)
+            TabTitleDisplay.DISABLED -> Component.empty()
+        }
+
+        when (config.tabDisplayMode) {
+            TabDisplayMode.PREFIX -> team.setPlayerPrefix(Component.empty().append(titleComponent).append(Component.literal(" ")))
+            TabDisplayMode.SUFFIX,
+            TabDisplayMode.CLEAN_SUFFIX -> team.setPlayerSuffix(Component.empty().append(Component.literal(" ")).append(titleComponent))
+            TabDisplayMode.DISABLED -> Unit
+        }
 
         val currentTeam = scoreboard.getPlayersTeam(playerName)
         if (currentTeam == null || currentTeam.name != teamName) {
