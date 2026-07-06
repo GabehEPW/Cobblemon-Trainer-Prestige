@@ -250,6 +250,14 @@ Trainer Prestige creates its config per world/server at:
 serverconfig/trainer_prestige/config.json
 ```
 
+Modpack creators can also include a global default config at:
+
+```txt
+config/trainer_prestige/config.json
+```
+
+When a world/server does not have its own config yet, Trainer Prestige uses this global config as the default template and then writes the per-world/per-server config.
+
 Player title data is also stored per world/server, so titles unlocked in one world do not carry over into another.
 
 Available config options include:
@@ -270,6 +278,14 @@ Available config options include:
 | <code>nameplateRenderDistance</code> | Controls nameplate display distance |
 | <code>hideTitleWhenSneaking</code> | Hides nameplate title while sneaking |
 | <code>requireCobblemon</code> | Controls Cobblemon requirement behavior |
+
+To make a modpack start with textured titles by default, include the optional resource pack enabled in the modpack and set:
+
+```json
+{
+  "titleDisplayStyle": "TEXTURE"
+}
+```
 
 ***
 

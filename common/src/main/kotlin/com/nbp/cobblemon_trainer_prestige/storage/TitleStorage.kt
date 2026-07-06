@@ -41,15 +41,10 @@ object TitleStorage {
         configCache[worldKey]?.let { return it }
 
         val path = configPath(server)
-        val loaded = if (path.exists()) {
-            runCatching { path.reader().use { gson.fromJson(it, TrainerPrestigeConfig::class.java) } }
-                .getOrElse {
-                    CobblemonTrainerPrestige.logger.warn("Failed to read Trainer Prestige config; using defaults.", it)
-                    TrainerPrestigeConfig()
-                }
-        } else {
-            TrainerPrestigeConfig()
-        }
+        ensureGlobalDefaultConfig()
+        val loaded = readConfig(path, "Failed to read Trainer Prestige world config; using defaults.")
+            ?: readConfig(globalDefaultConfigPath(), "Failed to read Trainer Prestige global default config; using defaults.")
+            ?: TrainerPrestigeConfig()
         normalizeConfig(loaded)
         Files.createDirectories(path.parent)
         path.writer().use { gson.toJson(loaded, it) }
@@ -149,6 +144,33 @@ object TitleStorage {
 
     private fun configPath(server: MinecraftServer): Path {
         return basePath(server).resolve("config.json")
+    }
+
+    private fun globalDefaultConfigPath(): Path {
+        return Path.of("config").resolve("trainer_prestige").resolve("config.json")
+    }
+
+    private fun ensureGlobalDefaultConfig() {
+        val path = globalDefaultConfigPath()
+        if (path.exists()) return
+
+        runCatching {
+            Files.createDirectories(path.parent)
+            path.writer().use { gson.toJson(TrainerPrestigeConfig(), it) }
+        }.onFailure {
+            CobblemonTrainerPrestige.logger.warn("Failed to create Trainer Prestige global default config.", it)
+        }
+    }
+
+    private fun readConfig(path: Path, warning: String): TrainerPrestigeConfig? {
+        if (!path.exists()) return null
+
+        return runCatching {
+            path.reader().use { gson.fromJson(it, TrainerPrestigeConfig::class.java) }
+        }.getOrElse {
+            CobblemonTrainerPrestige.logger.warn(warning, it)
+            null
+        }
     }
 
     @Suppress("SENSELESS_COMPARISON")
