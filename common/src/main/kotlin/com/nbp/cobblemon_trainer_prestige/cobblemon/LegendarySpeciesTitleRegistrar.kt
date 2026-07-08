@@ -12,9 +12,14 @@ import com.nbp.cobblemon_trainer_prestige.title.TitleRequirement
 import com.nbp.cobblemon_trainer_prestige.title.TitleVisibility
 import net.minecraft.server.MinecraftServer
 import net.minecraft.server.level.ServerPlayer
+import java.util.UUID
 
 object LegendarySpeciesTitleRegistrar {
     private val registeredSpeciesIds = mutableSetOf<String>()
+    private val queuedPlayerScans = linkedSetOf<UUID>()
+    private val scanningPlayers = mutableSetOf<UUID>()
+    private var queuedScanAll = false
+    private var scanningAll = false
 
     fun registerLoadedSpeciesTitles() {
         var added = 0
@@ -35,7 +40,7 @@ object LegendarySpeciesTitleRegistrar {
                         rarity = group.rarity,
                         category = group.category,
                         visibility = TitleVisibility.VISIBLE,
-                        unlockText = "Tenha ${species.name} no seu time ou PC.",
+                        unlockText = "Own ${species.name} in your party or PC.",
                         requirement = TitleRequirement(progressKey, 1, TitleRequirement.Operator.AT_LEAST),
                     )
                 )
@@ -47,10 +52,14 @@ object LegendarySpeciesTitleRegistrar {
         }
     }
 
-    fun checkPokemon(player: ServerPlayer, pokemon: Pokemon) {
-        if (SpecialPokemonClassifier.group(pokemon.species) == null) return
+    fun checkPokemon(player: ServerPlayer, pokemon: Pokemon): Boolean {
+        val group = SpecialPokemonClassifier.group(pokemon.species) ?: return false
+        if (isScanning()) return true
+
         registerLoadedSpeciesTitles()
-        scanOwnedPokemon(player)
+        TitleProgressManager.setFlag(player, progressKey(pokemon.species, group))
+        requestScanOwnedPokemon(player)
+        return true
     }
 
     fun recordCapture(player: ServerPlayer, pokemon: Pokemon) {
@@ -62,33 +71,78 @@ object LegendarySpeciesTitleRegistrar {
     }
 
     fun scanOwnedPokemon(player: ServerPlayer) {
-        registerLoadedSpeciesTitles()
+        if (!scanningPlayers.add(player.uuid)) return
 
-        val titleIds = linkedSetOf<String>()
-        val progressKeys = linkedSetOf<String>()
-        runCatching {
-            com.cobblemon.mod.common.Cobblemon.storage.getParty(player)
-                .forEach { pokemon ->
-                    val group = SpecialPokemonClassifier.group(pokemon.species) ?: return@forEach
-                    titleIds += titleId(pokemon.species, group)
-                    progressKeys += progressKey(pokemon.species, group)
-                }
+        try {
+            registerLoadedSpeciesTitles()
 
-            com.cobblemon.mod.common.Cobblemon.storage.getPC(player)
-                .forEach { pokemon ->
-                    val group = SpecialPokemonClassifier.group(pokemon.species) ?: return@forEach
-                    titleIds += titleId(pokemon.species, group)
-                    progressKeys += progressKey(pokemon.species, group)
-                }
-        }.onFailure {
-            CobblemonTrainerPrestige.logger.warn("Nao foi possivel escanear party/PC de ${player.gameProfile.name}.", it)
+            val titleIds = linkedSetOf<String>()
+            val progressKeys = linkedSetOf<String>()
+            var scanCompleted = false
+            runCatching {
+                com.cobblemon.mod.common.Cobblemon.storage.getParty(player)
+                    .forEach { pokemon ->
+                        val group = SpecialPokemonClassifier.group(pokemon.species) ?: return@forEach
+                        titleIds += titleId(pokemon.species, group)
+                        progressKeys += progressKey(pokemon.species, group)
+                    }
+
+                com.cobblemon.mod.common.Cobblemon.storage.getPC(player)
+                    .forEach { pokemon ->
+                        val group = SpecialPokemonClassifier.group(pokemon.species) ?: return@forEach
+                        titleIds += titleId(pokemon.species, group)
+                        progressKeys += progressKey(pokemon.species, group)
+                    }
+                scanCompleted = true
+            }.onFailure {
+                CobblemonTrainerPrestige.logger.warn("Could not scan party/PC for ${player.gameProfile.name}.", it)
+            }
+
+            if (scanCompleted) {
+                TitleProgressManager.syncLegendaryMasterOwnership(player, titleIds, progressKeys)
+            }
+        } finally {
+            scanningPlayers.remove(player.uuid)
         }
-
-        TitleProgressManager.syncLegendaryMasterOwnership(player, titleIds, progressKeys)
     }
 
     fun scanAllOnlinePlayers(server: MinecraftServer) {
-        server.playerList.players.forEach(::scanOwnedPokemon)
+        if (scanningAll) return
+
+        scanningAll = true
+        try {
+            server.playerList.players.forEach(::scanOwnedPokemon)
+        } finally {
+            scanningAll = false
+        }
+    }
+
+    fun requestScanOwnedPokemon(player: ServerPlayer) {
+        if (isScanning()) return
+        queuedPlayerScans += player.uuid
+    }
+
+    fun requestScanAllOnlinePlayers(server: MinecraftServer) {
+        if (isScanning()) return
+        queuedScanAll = true
+        queuedPlayerScans.clear()
+    }
+
+    fun processQueuedScans(server: MinecraftServer) {
+        if (isScanning()) return
+
+        if (queuedScanAll) {
+            queuedScanAll = false
+            queuedPlayerScans.clear()
+            scanAllOnlinePlayers(server)
+            return
+        }
+
+        val playerIds = queuedPlayerScans.toList()
+        queuedPlayerScans.clear()
+        playerIds.forEach { playerId ->
+            server.playerList.getPlayer(playerId)?.let(::scanOwnedPokemon)
+        }
     }
 
     private fun titleId(species: Species, group: SpecialPokemonGroup): String {
@@ -97,5 +151,9 @@ object LegendarySpeciesTitleRegistrar {
 
     private fun progressKey(species: Species, group: SpecialPokemonGroup): String {
         return "${group.progressPrefix}_${species.showdownId()}"
+    }
+
+    private fun isScanning(): Boolean {
+        return scanningAll || scanningPlayers.isNotEmpty()
     }
 }

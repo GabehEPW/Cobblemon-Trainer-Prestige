@@ -59,8 +59,9 @@ object CobblemonProgressHooks {
             event.playerId.let { playerId ->
                 com.cobblemon.mod.common.util.server()?.playerList?.getPlayer(playerId)
             }?.let { player ->
-                LegendarySpeciesTitleRegistrar.checkPokemon(player, event.pokemon)
-                LegendarySpeciesTitleRegistrar.scanAllOnlinePlayers(player.server)
+                if (LegendarySpeciesTitleRegistrar.checkPokemon(player, event.pokemon)) {
+                    LegendarySpeciesTitleRegistrar.requestScanAllOnlinePlayers(player.server)
+                }
             }
         }
 

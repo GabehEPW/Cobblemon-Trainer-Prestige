@@ -276,6 +276,7 @@ Available config options include:
 | <code>tabTitleDisplay</code> | Controls TAB title length: <code>COMPACT</code>, <code>FULL</code>, or <code>DISABLED</code> |
 | <code>titleDisplayStyle</code> | Controls text, texture, or combined title display |
 | <code>nameplateRenderDistance</code> | Controls nameplate display distance |
+| <code>specialOwnershipScanIntervalSeconds</code> | Controls how often online players are scanned for legendary, mythical, and Ultra Beast ownership updates |
 | <code>hideTitleWhenSneaking</code> | Hides nameplate title while sneaking |
 | <code>requireCobblemon</code> | Controls Cobblemon requirement behavior |
 

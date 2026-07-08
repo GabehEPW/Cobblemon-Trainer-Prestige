@@ -59,13 +59,11 @@ class CobblemonTrainerPrestigeNeoForge {
 
     private fun onServerTick(event: ServerTickEvent.Post) {
         scanTicks++
-        if (scanTicks >= AUTO_SCAN_INTERVAL_TICKS) {
+        val autoScanIntervalTicks = (TitleStorage.config(event.server).specialOwnershipScanIntervalSeconds.coerceAtLeast(1)) * 20
+        if (scanTicks >= autoScanIntervalTicks) {
             scanTicks = 0
-            LegendarySpeciesTitleRegistrar.scanAllOnlinePlayers(event.server)
+            LegendarySpeciesTitleRegistrar.requestScanAllOnlinePlayers(event.server)
         }
-    }
-
-    private companion object {
-        private const val AUTO_SCAN_INTERVAL_TICKS = 20 * 5
+        LegendarySpeciesTitleRegistrar.processQueuedScans(event.server)
     }
 }

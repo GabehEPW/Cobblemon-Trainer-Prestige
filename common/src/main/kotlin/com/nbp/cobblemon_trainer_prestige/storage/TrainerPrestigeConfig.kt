@@ -13,6 +13,7 @@ data class TrainerPrestigeConfig(
     var tabTitleDisplay: TabTitleDisplay = TabTitleDisplay.COMPACT,
     var titleDisplayStyle: TitleDisplayStyle = TitleDisplayStyle.TEXT,
     var nameplateRenderDistance: Int = 32,
+    var specialOwnershipScanIntervalSeconds: Int = 5,
     var hideTitleWhenSneaking: Boolean = true,
     var requireCobblemon: Boolean = false,
 )

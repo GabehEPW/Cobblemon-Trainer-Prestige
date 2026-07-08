@@ -29,10 +29,12 @@ class CobblemonTrainerPrestigeFabric : ModInitializer {
         }
         ServerTickEvents.END_SERVER_TICK.register { server ->
             scanTicks++
-            if (scanTicks >= AUTO_SCAN_INTERVAL_TICKS) {
+            val autoScanIntervalTicks = (TitleStorage.config(server).specialOwnershipScanIntervalSeconds.coerceAtLeast(1)) * 20
+            if (scanTicks >= autoScanIntervalTicks) {
                 scanTicks = 0
-                LegendarySpeciesTitleRegistrar.scanAllOnlinePlayers(server)
+                LegendarySpeciesTitleRegistrar.requestScanAllOnlinePlayers(server)
             }
+            LegendarySpeciesTitleRegistrar.processQueuedScans(server)
         }
         ServerMessageEvents.ALLOW_CHAT_MESSAGE.register { message, sender, _ ->
             val title = TitleProgressManager.equippedTitle(sender)
@@ -53,7 +55,4 @@ class CobblemonTrainerPrestigeFabric : ModInitializer {
         }
     }
 
-    private companion object {
-        private const val AUTO_SCAN_INTERVAL_TICKS = 20 * 5
-    }
 }
