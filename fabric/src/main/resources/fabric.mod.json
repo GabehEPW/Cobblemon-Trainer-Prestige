@@ -3,7 +3,7 @@
   "id": "cobblemon_trainer_prestige",
   "version": "${version}",
   "name": "Cobblemon Trainer Prestige",
-  "description": "Sistema de titulos e progresso de treinador para Cobblemon.",
+  "description": "A Cobblemon addon adding trainer prestige titles and progress tracking.",
   "authors": ["GabehEPW"],
   "environment": "*",
   "entrypoints": {

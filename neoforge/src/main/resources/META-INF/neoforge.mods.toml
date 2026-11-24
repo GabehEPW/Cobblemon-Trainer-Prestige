@@ -8,7 +8,7 @@ version = "${version}"
 displayName = "Cobblemon Trainer Prestige"
 authors = "GabehEPW"
 description = '''
-Sistema de titulos e progresso de treinador para Cobblemon.
+A Cobblemon addon adding trainer prestige titles and progress tracking.
 '''
 
 [[dependencies.cobblemon_trainer_prestige]]

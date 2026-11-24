@@ -295,7 +295,7 @@ To make a modpack start with textured titles by default, include the optional re
 ### Common
 
 * Minecraft **1.21.1**
-* Cobblemon **1.7.0+1.21.1**
+* Cobblemon **1.8.4+1.21.1**
 
 ### Fabric
 

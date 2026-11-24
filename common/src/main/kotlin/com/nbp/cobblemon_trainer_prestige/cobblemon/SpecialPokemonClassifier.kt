@@ -8,7 +8,7 @@ import com.nbp.cobblemon_trainer_prestige.title.TitleRarity
 object SpecialPokemonClassifier {
     fun group(species: Species): SpecialPokemonGroup? {
         return when {
-            species.hasSpecialLabel("ultra_beast", "ultrabeast") || species.normalizedShowdownId() in ULTRA_BEAST_IDS -> SpecialPokemonGroup.ULTRA_BEAST
+            species.hasSpecialLabel(CobblemonPokemonLabels.ULTRA_BEAST, "ultrabeast") || species.normalizedShowdownId() in ULTRA_BEAST_IDS -> SpecialPokemonGroup.ULTRA_BEAST
             species.hasSpecialLabel(CobblemonPokemonLabels.MYTHICAL) || species.normalizedShowdownId() in MYTHICAL_IDS -> SpecialPokemonGroup.MYTHICAL
             species.hasSpecialLabel(CobblemonPokemonLabels.LEGENDARY, "sub_legendary", "sublegendary") || species.normalizedShowdownId() in LEGENDARY_IDS -> SpecialPokemonGroup.LEGENDARY
             else -> null
