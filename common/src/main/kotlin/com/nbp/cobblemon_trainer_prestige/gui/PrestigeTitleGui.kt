@@ -74,6 +74,12 @@ object PrestigeTitleGui {
     }
 
     private fun open(player: ServerPlayer, state: GuiState) {
+        val currentMenu = player.containerMenu as? PrestigeTitleMenu
+        if (currentMenu != null) {
+            currentMenu.updateState(player, state)
+            return
+        }
+
         player.openMenu(
             SimpleMenuProvider(
                 { syncId, inventory, _ -> PrestigeTitleMenu(syncId, inventory, state) },
@@ -548,7 +554,7 @@ object PrestigeTitleGui {
     private class PrestigeTitleMenu(
         syncId: Int,
         playerInventory: Inventory,
-        private val state: GuiState,
+        private var state: GuiState,
     ) : AbstractContainerMenu(MenuType.GENERIC_9x6, syncId) {
         private val container = SimpleContainer(SIZE)
 
@@ -570,9 +576,18 @@ object PrestigeTitleGui {
             }
         }
 
+        fun updateState(player: ServerPlayer, newState: GuiState) {
+            this.state = newState
+            render(container, player, newState)
+            broadcastChanges()
+            sendAllDataToRemote()
+        }
+
         override fun clicked(slotId: Int, button: Int, clickType: ClickType, player: Player) {
             if (slotId in 0 until SIZE) {
                 val serverPlayer = player as? ServerPlayer ?: return
+                setCarried(ItemStack.EMPTY)
+                broadcastChanges()
                 handleClick(state, slotId, button, serverPlayer)
                 return
             }
